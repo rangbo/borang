@@ -213,7 +213,6 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* 프로필 리스트 텍스트 스타일 */
         .info-list-item {
             display: flex;
             flex-direction: column;
@@ -269,17 +268,69 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
+        /* 갤러리 이미지 및 호버 효과 */
+        .gallery-item-wrapper {
+            overflow: hidden;
+            border-radius: 1.25rem;
+            background: #f9fafb;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            cursor: zoom-in;
+        }
+
         .editorial-gallery-img {
             width: 100%;
             height: auto;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
             display: block;
             object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .editorial-gallery-img:hover {
-            transform: scale(1.02);
+
+        .gallery-item-wrapper:hover .editorial-gallery-img {
+            transform: scale(1.05);
+        }
+
+        /* 라이트박스(원본 자세히 보기) 레이어 */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 200;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            cursor: zoom-out;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            object-fit: contain;
+            animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            font-weight: 200;
         }
     </style>
 </head>
@@ -366,7 +417,7 @@
                     <div class="calendar-grid" id="calendarGrid"></div>
                 </div>
 
-                <!-- DESIGNING EXPERIENCE (디자인 보존) -->
+                <!-- DESIGNING EXPERIENCE (수정 금지 영역) -->
                 <div class="col-span-2 widget overflow-hidden relative group h-64" onclick="openModal('uiuxList')">
                     <div class="work-card-mesh"></div>
                     <div class="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -391,7 +442,7 @@
                     </div>
                 </div>
 
-                <!-- Web Content (색상 보존) -->
+                <!-- Web Content (시계 숫자와 색상 통일) -->
                 <div class="col-span-1 widget white-menu-widget h-48 group p-6 flex flex-col justify-center" onclick="openModal('webContentList')">
                     <div class="flex justify-end mb-auto pt-12 pr-1">
                         <div class="flex flex-col items-start space-y-1">
@@ -402,25 +453,21 @@
                     </div>
                     <div class="text-left pb-12">
                         <span class="bg-pink-500 text-white px-4 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest shadow-sm mb-2 inline-block">Promotion</span>
-                        <p class="font-black text-gray-800 tracking-tighter text-3xl uppercase leading-none">
-                            WEB<br>CONTENT
-                        </p>
+                        <p class="font-black text-gray-800 tracking-tighter text-3xl uppercase leading-none">WEB<br>CONTENT</p>
                     </div>
                 </div>
 
             </div>
         </div>
 
+        <!-- 하단 Dock -->
         <div class="mt-12 flex justify-center">
             <div class="dock-container">
                 <div class="dock-icon icon-phone" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.97,14.94C18.7,14.51 17.3,14.51 16.03,14.94L13.89,17.08C10.66,15.44 8.01,12.79 6.37,9.56L8.51,7.42C8.94,6.15 8.94,4.75 8.51,3.48L7.87,1.54C7.5,0.42 6.44,-0.25 5.27,0.07L1.87,1.01C0.79,1.31 0,2.29 0,3.41C0,14.78 9.22,24 20.59,24C21.71,24 22.69,23.21 22.69,22.13L23.93,18.73C24.25,17.56 23.58,16.5 22.46,16.13L20.52,15.49L19.97,14.94Z" /></svg></div>
                 <div class="dock-icon icon-mail" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20,4H4C1.79,4 0,5.79 0,8V16C0,18.21 1.79,20 4,20H20C22.21,20 24,18.21 24,16V8C24,5.79 22.21,4 20,4M20,8.6L12,13.6L4,8.6V8L12,13L20,8V8.6Z" /></svg></div>
                 <div class="dock-icon icon-kakao" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12,2C5.37,2 0,6.03 0,11C0,14.18 2.21,16.94 5.5,18.52C5.3,19.26 4.5,22.19 4.4,22.56C4.3,23 4.6,23 4.8,22.86C5,22.77 7.2,21.32 9.8,19.64C10.5,19.87 11.2,20 12,20C18.63,20 24,15.97 24,11C24,6.03 18.63,2,12,2Z" /></svg></div>
-                <div class="dock-icon icon-gallery" onclick="openModal('gallery')" title="갤러리">
-                    <svg width="32" height="32" viewBox="0 0 100 100">
-                        <defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs>
-                        <circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" />
-                    </svg>
+                <div class="dock-icon icon-gallery" onclick="openModal('gallery')">
+                    <svg width="32" height="32" viewBox="0 0 100 100"><defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs><circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /></svg>
                 </div>
             </div>
         </div>
@@ -432,6 +479,12 @@
         <div class="container mx-auto px-6 py-24 max-w-5xl">
             <div id="modalContent" class="opacity-0 transition-opacity duration-500"></div>
         </div>
+    </div>
+
+    <!-- 라이트박스(원본 상세보기) -->
+    <div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox()">
+        <span class="lightbox-close">✕</span>
+        <img id="lightboxImg" class="lightbox-img" src="" alt="확대 이미지">
     </div>
 
     <script>
@@ -449,8 +502,7 @@
                 images: [
                     getGithubImg('catalog1.png'), getGithubImg('catalog2.png'), getGithubImg('catalog3.png'), 
                     getGithubImg('catalog4.png'), getGithubImg('catalog5.png'), getGithubImg('catalog6.png'), 
-                    getGithubImg('catalog7.png'), getGithubImg('catalog8.png'), getGithubImg('catalog9.png'),
-                    getGithubImg('catalog10.png'), getGithubImg('catalog11.png')
+                    getGithubImg('catalog7.png'), getGithubImg('catalog8.png'), getGithubImg('catalog9.png')
                 ]
             }
         };
@@ -462,9 +514,9 @@
             const displayHours = hours % 12 || 12;
             document.getElementById('currentTime').textContent = `${String(displayHours).padStart(2, '0')}:${minutes}`;
             document.getElementById('ampm').textContent = hours >= 12 ? 'PM' : 'AM';
-            const monthsShort = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-            const daysShort = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-            document.getElementById('currentDate').textContent = `${monthsShort[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')}, ${daysShort[now.getDay()]}`;
+            const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+            const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+            document.getElementById('currentDate').textContent = `${months[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')}, ${days[now.getDay()]}`;
         }
 
         function renderCalendar() {
@@ -488,7 +540,7 @@
             const contentDiv = document.getElementById('modalContent');
             document.getElementById('modalContainer').style.display = 'block';
             document.body.style.overflow = 'hidden';
-            contentDiv.classList.replace('opacity-100', 'opacity-0');
+            contentDiv.classList.remove('opacity-100'); contentDiv.classList.add('opacity-0');
 
             setTimeout(() => {
                 let html = '';
@@ -496,7 +548,7 @@
                     html = `
                         <div class="max-w-4xl mx-auto">
                             <h1 class="text-7xl font-black mb-4 uppercase text-gray-900 leading-none">LEE BORANG</h1>
-                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Publisher</p>
+                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Web Publisher</p>
                             
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                                 <div class="modal-info-card">
@@ -538,24 +590,48 @@
                 } else if (viewId === 'uiuxList') {
                     html = `<h1 class="text-5xl font-black mb-12 uppercase">UIUX Projects</h1><div class="project-item" onclick="openProject('uiux1')"><span class="text-pink-500 font-bold text-xs uppercase">2025</span><h3 class="text-2xl font-black text-gray-800 mt-2">Fintech Mobile App</h3></div>`;
                 }
-                contentDiv.innerHTML = html; contentDiv.classList.replace('opacity-0', 'opacity-100');
+                contentDiv.innerHTML = html; contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
             }, 300);
         }
 
         function openProject(id) {
             const project = projectData[id];
             const contentDiv = document.getElementById('modalContent');
-            contentDiv.classList.replace('opacity-100', 'opacity-0');
+            contentDiv.classList.remove('opacity-100'); contentDiv.classList.add('opacity-0');
             setTimeout(() => {
                 let innerHtml = `<div class="max-w-5xl mx-auto"><div class="mb-12 pb-8 border-b border-gray-100"><p class="text-pink-500 font-black text-xs uppercase mb-4">${project.category} — ${project.year}</p><h1 class="text-7xl font-black tracking-tighter mb-4">${project.title}</h1><p class="text-2xl text-gray-600 font-bold">${project.desc}</p></div>`;
                 if (project.images) {
-                    innerHtml += `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${project.images.map(img => `<img src="${img}" class="editorial-gallery-img" onerror="this.src='https://via.placeholder.com/600x800?text=Check+Images+Folder'">`).join('')}</div>`;
+                    // 2열 레이아웃 및 클릭 시 라이트박스 오픈 함수 연결
+                    innerHtml += `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                        ${project.images.map(img => `
+                            <div class="gallery-item-wrapper" onclick="openLightbox('${img}')">
+                                <img src="${img}" class="editorial-gallery-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1000?text=Check+Images+Folder'">
+                            </div>
+                        `).join('')}
+                    </div>`;
                 } else {
                     innerHtml += `<div class="w-full h-96 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-200 font-black text-2xl uppercase">Coming Soon</div>`;
                 }
                 contentDiv.innerHTML = innerHtml + `</div>`;
-                contentDiv.classList.replace('opacity-0', 'opacity-100');
+                contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
             }, 300);
+        }
+
+        // 라이트박스 열기
+        function openLightbox(src) {
+            const overlay = document.getElementById('lightboxOverlay');
+            const img = document.getElementById('lightboxImg');
+            img.src = src;
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // 라이트박스 닫기
+        function closeLightbox() {
+            document.getElementById('lightboxOverlay').style.display = 'none';
+            if (document.getElementById('modalContainer').style.display !== 'block') {
+                document.body.style.overflow = 'auto';
+            }
         }
 
         function closeModal() { document.getElementById('modalContainer').style.display = 'none'; document.body.style.overflow = 'auto'; }
