@@ -62,7 +62,7 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04) !important;
         }
 
-        /* UIUX 카드 배경 애니메이션 */
+        /* UIUX 카드 배경 애니메이션 (수정 금지 영역) */
         .work-card-mesh {
             position: absolute;
             inset: 0;
@@ -233,7 +233,6 @@
             line-height: 1.4;
         }
 
-        /* 모달 내 상세 정보 스타일 */
         .modal-info-card {
             background: #fdfdfd;
             border: 1px solid #f0f0f0;
@@ -242,7 +241,6 @@
             height: 100%;
         }
 
-        /* 프로필 하단 태그 스타일 */
         .skill-tag {
             padding: 4px 10px;
             background: rgba(244, 114, 182, 0.1);
@@ -271,7 +269,6 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
-        /* 갤러리 이미지 스타일 */
         .editorial-gallery-img {
             width: 100%;
             height: auto;
@@ -301,56 +298,29 @@
                         </div>
                         
                         <div class="w-full space-y-8">
-                            <!-- 교육 -->
                             <div class="flex flex-col border-l-2 border-pink-200 pl-5 py-1">
                                 <span class="text-[10px] font-black text-pink-400 uppercase tracking-[0.15em] mb-4">Education</span>
                                 <div class="space-y-4">
-                                    <div class="info-list-item">
-                                        <span class="info-list-date">2019.02</span>
-                                        <span class="info-list-text">원광대학교 정보전자상거래학부 졸업</span>
-                                    </div>
-                                    <div class="info-list-item">
-                                        <span class="info-list-date">2020.06</span>
-                                        <span class="info-list-text">이젠컴퓨터학원 웹디자인기능사과정 수료</span>
-                                    </div>
-                                    <div class="info-list-item">
-                                        <span class="info-list-date">2022.12</span>
-                                        <span class="info-list-text">패스트캠퍼스 React&Redux 웹 프로그래밍 수료</span>
-                                    </div>
-                                    <div class="info-list-item">
-                                        <span class="info-list-date">2023.07</span>
-                                        <span class="info-list-text">패스트캠퍼스 웹퍼블리싱 완전 정복 수료</span>
-                                    </div>
+                                    <div class="info-list-item"><span class="info-list-date">2019.02</span><span class="info-list-text">원광대학교 정보전자상거래학부 졸업</span></div>
+                                    <div class="info-list-item"><span class="info-list-date">2020.06</span><span class="info-list-text">이젠컴퓨터학원 웹디자인기능사과정 수료</span></div>
+                                    <div class="info-list-item"><span class="info-list-date">2022.12</span><span class="info-list-text">패스트캠퍼스 React&Redux 웹 프로그래밍 수료</span></div>
+                                    <div class="info-list-item"><span class="info-list-date">2023.07</span><span class="info-list-text">패스트캠퍼스 웹퍼블리싱 완전 정복 수료</span></div>
                                 </div>
                             </div>
 
-                            <!-- 경력 -->
                             <div class="flex flex-col border-l-2 border-pink-200 pl-5 py-1">
                                 <span class="text-[10px] font-black text-pink-400 uppercase tracking-[0.15em] mb-4">Experience</span>
                                 <div class="space-y-4">
-                                    <div class="info-list-item">
-                                        <span class="info-list-date">2021.08 — 현재</span>
-                                        <span class="info-list-text">(주)아람솔루션 디자인팀 대리</span>
-                                    </div>
-                                    <div class="info-list-item">
-                                        <span class="info-list-date">2020.12 — 2021.06</span>
-                                        <span class="info-list-text">커피만나 디자인개발팀</span>
-                                    </div>
+                                    <div class="info-list-item"><span class="info-list-date">2021.08 — 현재</span><span class="info-list-text">(주)아람솔루션 디자인팀 대리</span></div>
+                                    <div class="info-list-item"><span class="info-list-date">2020.12 — 2021.06</span><span class="info-list-text">커피만나 디자인개발팀</span></div>
                                 </div>
                             </div>
 
-                            <!-- 자격증 -->
                             <div class="flex flex-col border-l-2 border-pink-200 pl-5 py-1">
                                 <span class="text-[10px] font-black text-pink-400 uppercase tracking-[0.15em] mb-4">License</span>
                                 <div class="space-y-3">
-                                    <div class="flex justify-between items-center">
-                                        <span class="info-list-text">웹디자인기능사</span>
-                                        <span class="text-[10px] text-gray-400 font-bold">2020.12</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="info-list-text">GTQ 1급</span>
-                                        <span class="text-[10px] text-gray-400 font-bold">2020.09</span>
-                                    </div>
+                                    <div class="flex justify-between items-center"><span class="info-list-text">웹디자인기능사</span><span class="text-[10px] text-gray-400 font-bold">2020.12</span></div>
+                                    <div class="flex justify-between items-center"><span class="info-list-text">GTQ 1급</span><span class="text-[10px] text-gray-400 font-bold">2020.09</span></div>
                                 </div>
                             </div>
                         </div>
@@ -398,7 +368,7 @@
                     <div class="calendar-grid" id="calendarGrid"></div>
                 </div>
 
-                <!-- UIUX 카드 (수정 방지 대상) -->
+                <!-- DESIGNING EXPERIENCE (수정 금지 영역) -->
                 <div class="col-span-2 widget overflow-hidden relative group h-64" onclick="openModal('uiuxList')">
                     <div class="work-card-mesh"></div>
                     <div class="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -416,9 +386,7 @@
 
                 <!-- Editorial -->
                 <div class="col-span-1 widget h-48 group" onclick="openModal('printList')">
-                    <div class="editorial-image">
-                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover">
-                    </div>
+                    <div class="editorial-image"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover"></div>
                     <div class="editorial-overlay"></div>
                     <div class="editorial-content p-6 flex flex-col justify-end items-start text-left">
                         <span class="bg-white/90 backdrop-blur-sm text-pink-500 px-4 py-1 rounded-full text-[9px] font-black uppercase tracking-widest shadow-sm mb-2">Print Archive</span>
@@ -426,7 +394,7 @@
                     </div>
                 </div>
 
-                <!-- Web Content -->
+                <!-- Web Content (시계 숫자와 색상 통일) -->
                 <div class="col-span-1 widget white-menu-widget h-48 group p-6 flex flex-col justify-center" onclick="openModal('webContentList')">
                     <div class="flex justify-end mb-auto pt-12 pr-1">
                         <div class="flex flex-col items-start space-y-1">
@@ -437,9 +405,7 @@
                     </div>
                     <div class="text-left pb-12">
                         <span class="bg-pink-500 text-white px-4 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest shadow-sm mb-2 inline-block">Promotion</span>
-                        <p class="font-black text-gray-800 tracking-tighter text-3xl uppercase leading-none">
-                            WEB<br>CONTENT
-                        </p>
+                        <p class="font-black text-gray-800 tracking-tighter text-3xl uppercase leading-none">WEB<br>CONTENT</p>
                     </div>
                 </div>
 
@@ -452,11 +418,8 @@
                 <div class="dock-icon icon-phone" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.97,14.94C18.7,14.51 17.3,14.51 16.03,14.94L13.89,17.08C10.66,15.44 8.01,12.79 6.37,9.56L8.51,7.42C8.94,6.15 8.94,4.75 8.51,3.48L7.87,1.54C7.5,0.42 6.44,-0.25 5.27,0.07L1.87,1.01C0.79,1.31 0,2.29 0,3.41C0,14.78 9.22,24 20.59,24C21.71,24 22.69,23.21 22.69,22.13L23.93,18.73C24.25,17.56 23.58,16.5 22.46,16.13L20.52,15.49L19.97,14.94Z" /></svg></div>
                 <div class="dock-icon icon-mail" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20,4H4C1.79,4 0,5.79 0,8V16C0,18.21 1.79,20 4,20H20C22.21,20 24,18.21 24,16V8C24,5.79 22.21,4 20,4M20,8.6L12,13.6L4,8.6V8L12,13L20,8V8.6Z" /></svg></div>
                 <div class="dock-icon icon-kakao" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12,2C5.37,2 0,6.03 0,11C0,14.18 2.21,16.94 5.5,18.52C5.3,19.26 4.5,22.19 4.4,22.56C4.3,23 4.6,23 4.8,22.86C5,22.77 7.2,21.32 9.8,19.64C10.5,19.87 11.2,20 12,20C18.63,20 24,15.97 24,11C24,6.03 18.63,2,12,2Z" /></svg></div>
-                <div class="dock-icon icon-gallery" onclick="openModal('gallery')" title="갤러리">
-                    <svg width="32" height="32" viewBox="0 0 100 100">
-                        <defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs>
-                        <circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" />
-                    </svg>
+                <div class="dock-icon icon-gallery" onclick="openModal('gallery')">
+                    <svg width="32" height="32" viewBox="0 0 100 100"><defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs><circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /></svg>
                 </div>
             </div>
         </div>
@@ -471,237 +434,131 @@
     </div>
 
     <script>
+        // 깃허브 이미지 경로 생성 (사용자님 정보: rangbo / borang)
+        const githubUser = "rangbo";
+        const repoName = "borang";
+        const getGithubImg = (fileName) => `https://raw.githubusercontent.com/${githubUser}/${repoName}/main/${encodeURIComponent(fileName)}`;
+
         const projectData = {
             'uiux1': { category: 'UIUX', year: '2025', title: 'Fintech Mobile App', desc: '금융 정보를 직관적으로 설계했습니다.' },
-            'uiux2': { category: 'UIUX', year: '2024', title: 'Travel Booking', desc: '여행지 탐색 시스템을 구축했습니다.' },
             'print_catalog': { 
                 category: 'Editorial', 
                 year: '2024', 
                 title: 'Catalog Archive', 
                 desc: '카달로그 및 리플렛 인쇄물 디자인 모음입니다.',
                 images: [
-                    'WWWWWWWW.jpg', 'www.jpg', 'td03630000862.jpg', 
-                    'wwww.jpg', 'ww.jpg', 'wwwwwww.jpg', 
-                    'wwwww.jpg', 'wwwwwww 1.jpg', 'WWWWWWWW 1.jpg'
+                    getGithubImg('WWWWWWWW.jpg'), getGithubImg('www.jpg'), getGithubImg('td03630000862.jpg'), 
+                    getGithubImg('wwww.jpg'), getGithubImg('ww.jpg'), getGithubImg('wwwwwww.jpg'), 
+                    getGithubImg('wwwww.jpg'), getGithubImg('wwwwwww 1.jpg'), getGithubImg('WWWWWWWW 1.jpg'),
+                    getGithubImg('image_e64afd.png'), getGithubImg('image_e64b20.png')
                 ]
-            },
-            'print1': { category: 'Editorial', year: '2024', title: 'Brand Identity Book', desc: '브랜드 가이드북 프로젝트입니다.' },
-            'print2': { category: 'Editorial', year: '2023', title: 'Arts Exhibition', desc: '도록 디자인을 진행했습니다.' },
-            'web1': { category: 'Web Content', year: '2025', title: 'SNS Summer Campaign', desc: '역동적인 마케팅 배너 세트입니다.' },
-            'web2': { category: 'Web Content', year: '2024', title: 'Product Launch Landing', desc: '랜딩 페이지 제작 프로젝트입니다.' }
+            }
         };
 
         function updateClock() {
             const now = new Date();
             let hours = now.getHours();
             const minutes = String(now.getMinutes()).padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
             const displayHours = hours % 12 || 12;
             document.getElementById('currentTime').textContent = `${String(displayHours).padStart(2, '0')}:${minutes}`;
-            document.getElementById('ampm').textContent = ampm;
-            const daysShort = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-            const monthsShort = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-            document.getElementById('currentDate').textContent = `${monthsShort[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')}, ${daysShort[now.getDay()]}`;
+            document.getElementById('ampm').textContent = hours >= 12 ? 'PM' : 'AM';
+            const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+            const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+            document.getElementById('currentDate').textContent = `${months[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')}, ${days[now.getDay()]}`;
         }
 
         function renderCalendar() {
             const now = new Date();
-            const currentYear = now.getFullYear();
-            const currentMonth = now.getMonth();
-            const today = now.getDate();
-            const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            document.getElementById('calMonth').textContent = monthNames[currentMonth];
             const grid = document.getElementById('calendarGrid');
-            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-            grid.innerHTML = `<div class="calendar-day">S</div><div class="calendar-day">M</div><div class="calendar-day">T</div><div class="calendar-day">W</div><div class="calendar-day">T</div><div class="calendar-day">F</div><div class="calendar-day">S</div>`;
+            const firstDay = new Date(now.getFullYear(), now.getMonth(), 1).getDay();
+            const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+            grid.innerHTML = '<div class="calendar-day">S</div><div class="calendar-day">M</div><div class="calendar-day">T</div><div class="calendar-day">W</div><div class="calendar-day">T</div><div class="calendar-day">F</div><div class="calendar-day">S</div>';
             for (let i = 0; i < firstDay; i++) grid.appendChild(document.createElement('div'));
             for (let i = 1; i <= daysInMonth; i++) {
                 const dateEl = document.createElement('div');
-                dateEl.classList.add('calendar-date');
+                dateEl.className = `calendar-date ${i === now.getDate() ? 'today' : ''}`;
                 dateEl.textContent = i;
-                if (i === today) dateEl.classList.add('today');
                 grid.appendChild(dateEl);
             }
         }
 
-        setInterval(updateClock, 1000);
-        updateClock();
-        renderCalendar();
+        setInterval(updateClock, 1000); updateClock(); renderCalendar();
 
         function openModal(viewId) {
-            const container = document.getElementById('modalContainer');
             const contentDiv = document.getElementById('modalContent');
-            contentDiv.classList.remove('opacity-100');
-            contentDiv.classList.add('opacity-0');
-            container.style.display = 'block';
+            document.getElementById('modalContainer').style.display = 'block';
             document.body.style.overflow = 'hidden';
+            contentDiv.classList.remove('opacity-100'); contentDiv.classList.add('opacity-0');
 
             setTimeout(() => {
                 let html = '';
                 if (viewId === 'profile') {
                     html = `
                         <div class="max-w-4xl mx-auto">
-                            <div class="mb-16">
-                                <h1 class="text-7xl font-black mb-4 tracking-tighter uppercase text-gray-900 leading-none">LEE BORANG</h1>
-                                <p class="text-2xl text-pink-500 font-bold uppercase tracking-[0.2em] mb-8">UIUX Designer / Publisher</p>
-                                <div class="h-1 w-24 bg-gray-900"></div>
-                            </div>
+                            <h1 class="text-7xl font-black mb-4 uppercase text-gray-900 leading-none">LEE BORANG</h1>
+                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Web Publisher</p>
                             
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                                 <div class="modal-info-card">
-                                    <h3 class="text-xs font-black text-pink-400 uppercase tracking-[0.2em] mb-6">Education</h3>
-                                    <div class="space-y-6">
-                                        <div class="info-list-item">
-                                            <span class="info-list-date">2019.02</span>
-                                            <span class="info-list-text text-base">원광대학교 정보전자상거래학부 졸업</span>
-                                        </div>
-                                        <div class="info-list-item">
-                                            <span class="info-list-date">2020.06</span>
-                                            <span class="info-list-text text-base">이젠컴퓨터학원 웹디자인기능사과정 수료</span>
-                                        </div>
-                                        <div class="info-list-item">
-                                            <span class="info-list-date">2022.12</span>
-                                            <span class="info-list-text text-base">React&Redux 웹 프로그래밍 수료</span>
-                                        </div>
-                                        <div class="info-list-item">
-                                            <span class="info-list-date">2023.07</span>
-                                            <span class="info-list-text text-base">웹퍼블리싱 완전 정복 수료</span>
-                                        </div>
-                                        <div class="info-list-item">
-                                            <span class="info-list-date">2024.01</span>
-                                            <span class="info-list-text text-base">UIUX 디자인 심화 과정 수료</span>
-                                        </div>
+                                    <h3 class="text-xs font-black text-pink-400 uppercase tracking-widest mb-6">Education</h3>
+                                    <div class="space-y-4">
+                                        <div class="info-list-item"><span class="info-list-date">2019.02</span><span class="info-list-text text-sm">원광대학교 정보전자상거래학부 졸업</span></div>
+                                        <div class="info-list-item"><span class="info-list-date">2020.06</span><span class="info-list-text text-sm">이젠컴퓨터학원 웹디자인기능사과정 수료</span></div>
+                                        <div class="info-list-item"><span class="info-list-date">2022.12</span><span class="info-list-text text-sm">패스트캠퍼스 React&Redux 웹 프로그래밍 수료</span></div>
+                                        <div class="info-list-item"><span class="info-list-date">2023.07</span><span class="info-list-text text-sm">패스트캠퍼스 웹퍼블리싱 완전 정복 수료</span></div>
                                     </div>
                                 </div>
                                 <div class="modal-info-card">
-                                    <h3 class="text-xs font-black text-pink-400 uppercase tracking-[0.2em] mb-6">Experience</h3>
+                                    <h3 class="text-xs font-black text-pink-400 uppercase tracking-widest mb-6">Experience</h3>
                                     <div class="space-y-6">
-                                        <div class="info-list-item">
-                                            <span class="info-list-date">2021.08 — 현재</span>
-                                            <span class="info-list-text text-base">(주)아람솔루션 디자인팀 대리</span>
-                                            <p class="text-xs text-gray-400 mt-1 font-medium">UIUX 디자인 및 퍼블리싱 총괄</p>
-                                        </div>
-                                        <div class="info-list-item">
-                                            <span class="info-list-date">2020.12 — 2021.06</span>
-                                            <span class="info-list-text text-base">커피만나 디자인개발팀</span>
-                                            <p class="text-xs text-gray-400 mt-1 font-medium">브랜드 웹사이트 운영 및 제작</p>
-                                        </div>
+                                        <div class="info-list-item"><span class="info-list-date">2021.08 — 현재</span><span class="info-list-text text-sm">(주)아람솔루션 디자인팀 대리</span></div>
+                                        <div class="info-list-item"><span class="info-list-date">2020.12 — 2021.06</span><span class="info-list-text text-sm">커피만나 디자인개발팀</span></div>
                                     </div>
                                 </div>
                                 <div class="modal-info-card">
-                                    <h3 class="text-xs font-black text-pink-400 uppercase tracking-[0.2em] mb-6">License</h3>
-                                    <div class="space-y-6">
-                                        <div class="flex flex-col">
-                                            <span class="info-list-date mb-1">2020.12</span>
-                                            <span class="info-list-text text-base">웹디자인기능사</span>
-                                            <span class="text-[10px] text-gray-400 font-bold uppercase mt-1 tracking-wider">HRD Korea</span>
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <span class="info-list-date mb-1">2020.09</span>
-                                            <span class="info-list-text text-base">GTQ 그래픽기술자격 1급</span>
-                                            <span class="text-[10px] text-gray-400 font-bold uppercase mt-1 tracking-wider">KPC</span>
-                                        </div>
+                                    <h3 class="text-xs font-black text-pink-400 uppercase tracking-widest mb-6">License</h3>
+                                    <div class="space-y-4">
+                                        <div class="info-list-item"><span class="info-list-date">2020.12</span><span class="info-list-text text-sm">웹디자인기능사</span></div>
+                                        <div class="info-list-item"><span class="info-list-date">2020.09</span><span class="info-list-text text-sm">GTQ 1급</span></div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="bg-gray-900 text-white p-12 rounded-[2.5rem] shadow-2xl">
-                                <h3 class="text-sm font-black text-pink-400 uppercase tracking-[0.3em] mb-8">Introduction</h3>
-                                <div class="space-y-6">
-                                    <p class="text-3xl font-black leading-tight tracking-tighter">
-                                        "사용자의 경험을 디자인하고 개발자의 효율을 코딩합니다"
-                                    </p>
-                                    <p class="text-lg text-gray-300 font-medium leading-relaxed">
-                                        자사몰 디자인 개편과 리뉴얼을 주도하며 WEB/APP 인터페이스의 기초를 다졌습니다. 신규 쇼핑몰 런칭과 오픈마켓 입점 프로세스를 경험하며 상세페이지, 이벤트 배너, 프로모션 디자인 등 이커머스 실무 전반에 걸친 역량을 쌓았습니다.
-                                    </p>
-                                    <p class="text-lg text-gray-300 font-medium leading-relaxed">
-                                        이후 50여 개의 다양한 프로젝트에 참여하며 웹/앱 UIUX 디자인, 퍼블리싱, 브랜드 인쇄물까지 디자인 스펙트럼을 넓혔습니다. 주로 공공기관, 지자체와 함께 일했으며 30,000명 이상의 유저가 활동하는 대규모 서비스의 디자인 구축에 참여한 경험이 있습니다.
-                                        공공배달앱 고도화 프로젝트에서는 세탁 예약, 공동구매, 헬스케어, 선물하기 등 실생활과 밀접한 서비스의 UI를 디자인하고 퍼블리싱한 경험이 있습니다. 사용자가 편안함을 느끼는 UX와 개발자가 신뢰할 수 있는 구조적인 코드를 만드는 것을 추구합니다.
-                                    </p>
+                                <h3 class="text-sm font-black text-pink-400 uppercase tracking-widest mb-8">Introduction</h3>
+                                <div class="space-y-6 text-gray-300 text-lg leading-relaxed font-medium">
+                                    <p class="text-3xl font-black text-white leading-tight">"사용자의 경험을 디자인하고 개발자의 효율을 코딩합니다"</p>
+                                    <p>커리어의 시작부터 자사몰의 웹과 앱 디자인 개편을 주도하고, 신규 쇼핑몰 오픈부터 오픈마켓 입점 관리, 상세페이지 및 각종 이벤트 배너 제작까지 이커머스의 전 과정을 깊이 있게 경험했습니다. 이후 약 40여 개의 다양한 프로젝트를 거치며 UIUX 디자인부터 퍼블리싱, 브랜드 인쇄 매체까지 디자인의 영역을 확장해 왔습니다. 특히 30,000명 이상의 유저가 활동하는 대규모 서비스의 디자인 구축에 참여하며 데이터 기반의 사용자 경험을 설계하는 법을 익혔습니다.</p>
+                                    <p>공공배달앱 고도화 프로젝트를 통해 세탁 예약, 공동구매, 소모임, 헬스케어, 선물하기 등 일상의 밀접한 서비스들을 정교한 UI로 녹여냈습니다. 단순히 시각적인 화려함에 그치지 않고 사용자가 가장 편안하게 느끼는 UX와 개발자가 효율적으로 작업할 수 있는 구조적인 코드를 만드는 것을 저의 확고한 디자인 철학으로 삼고 있습니다.</p>
                                 </div>
                             </div>
                         </div>`;
                 } else if (viewId === 'printList') {
-                    const filtered = Object.entries(projectData).filter(([k, v]) => v.category === 'Editorial');
-                    html = `
-                        <h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">Editorial Projects</h1>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            ${filtered.map(([id, p]) => `
-                                <div class="project-item" onclick="openProject('${id}')">
-                                    <span class="text-pink-500 font-bold text-xs uppercase tracking-widest">${p.year}</span>
-                                    <h3 class="text-2xl font-black text-gray-800 mt-2">${p.title}</h3>
-                                    <p class="text-gray-500 text-sm mt-2">${p.desc}</p>
-                                </div>
-                            `).join('')}
-                        </div>`;
-                } else if (viewId === 'uiuxList' || viewId === 'webContentList') {
-                    const category = viewId === 'uiuxList' ? 'UIUX' : 'Web Content';
-                    const filtered = Object.entries(projectData).filter(([k, v]) => v.category === category);
-                    html = `<h1 class="text-5xl font-black mb-12 tracking-tighter uppercase">${category} Projects</h1><div class="grid grid-cols-1 md:grid-cols-2 gap-6">${filtered.map(([id, p]) => `<div class="project-item" onclick="openProject('${id}')"><span class="text-pink-500 font-bold text-xs">${p.year}</span><h3 class="text-2xl font-black text-gray-800">${p.title}</h3><p class="text-gray-500 text-sm">${p.desc}</p></div>`).join('')}</div>`;
-                } else if (viewId === 'gallery') {
-                    html = `<h1 class="text-5xl font-black mb-12 uppercase">Gallery</h1><div class="grid grid-cols-2 md:grid-cols-3 gap-4">${[...Array(6)].map((_, i) => `<div class="rounded-2xl overflow-hidden aspect-square"><img src="https://picsum.photos/seed/${i+10}/600/600" class="w-full h-full object-cover"></div>`).join('')}</div>`;
-                } else if (viewId === 'contact') {
-                    html = `<div class="text-center py-20"><h1 class="text-6xl font-black mb-4 uppercase tracking-tighter">Contact</h1><p class="text-gray-500 mb-12 font-bold uppercase tracking-widest text-xs">Let's work together!</p><a href="mailto:hello@example.com" class="text-3xl font-black text-pink-500">hello@example.com</a></div>`;
+                    html = `<h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">Editorial Projects</h1><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="project-item" onclick="openProject('print_catalog')"><span class="text-pink-500 font-bold text-xs uppercase">2024</span><h3 class="text-2xl font-black text-gray-800 mt-2">Catalog Archive</h3><p class="text-gray-500 text-sm mt-2">카달로그 및 인쇄물 아카이브</p></div></div>`;
+                } else if (viewId === 'uiuxList') {
+                    html = `<h1 class="text-5xl font-black mb-12 uppercase">UIUX Projects</h1><div class="project-item" onclick="openProject('uiux1')"><span class="text-pink-500 font-bold text-xs uppercase">2025</span><h3 class="text-2xl font-black text-gray-800 mt-2">Fintech Mobile App</h3></div>`;
                 }
-                contentDiv.innerHTML = html;
-                contentDiv.classList.remove('opacity-0');
-                contentDiv.classList.add('opacity-100');
+                contentDiv.innerHTML = html; contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
             }, 300);
         }
 
-        function openProject(projectId) {
-            const project = projectData[projectId];
+        function openProject(id) {
+            const project = projectData[id];
             const contentDiv = document.getElementById('modalContent');
-            contentDiv.classList.remove('opacity-100');
-            contentDiv.classList.add('opacity-0');
-            
+            contentDiv.classList.remove('opacity-100'); contentDiv.classList.add('opacity-0');
             setTimeout(() => {
-                let innerHtml = '';
-                
-                // Catalog Archive (이미지 갤러리) 레이아웃
-                if (project.images && project.images.length > 0) {
-                    innerHtml = `
-                        <div class="max-w-5xl mx-auto">
-                            <div class="mb-12 border-b border-gray-100 pb-8">
-                                <p class="text-pink-500 font-black mb-4 uppercase tracking-widest text-xs">${project.category} — ${project.year}</p>
-                                <h1 class="text-7xl font-black tracking-tighter mb-4 uppercase leading-[0.9]">${project.title}</h1>
-                                <p class="text-2xl text-gray-600 font-bold leading-tight">${project.desc}</p>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                ${project.images.map(img => `
-                                    <div class="flex flex-col gap-2 group">
-                                        <div class="overflow-hidden rounded-[1rem] shadow-sm">
-                                            <img src="${img}" alt="Catalog image" class="editorial-gallery-img group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/600x800?text=Catalog+Image'">
-                                        </div>
-                                        <p class="text-[10px] text-gray-300 font-bold uppercase tracking-widest pl-1 mt-2 truncate">${img}</p>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
+                let innerHtml = `<div class="max-w-5xl mx-auto"><div class="mb-12 pb-8 border-b border-gray-100"><p class="text-pink-500 font-black text-xs uppercase mb-4">${project.category} — ${project.year}</p><h1 class="text-7xl font-black tracking-tighter mb-4">${project.title}</h1><p class="text-2xl text-gray-600 font-bold">${project.desc}</p></div>`;
+                if (project.images) {
+                    innerHtml += `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${project.images.map(img => `<img src="${img}" class="editorial-gallery-img" onerror="this.src='https://via.placeholder.com/600x800?text=Check+Filename'">`).join('')}</div>`;
                 } else {
-                    // 일반 프로젝트 상세 레이아웃
-                    innerHtml = `
-                        <div class="max-w-3xl mx-auto">
-                            <p class="text-pink-500 font-black mb-4 uppercase tracking-widest text-xs">${project.category} — ${project.year}</p>
-                            <h1 class="text-7xl font-black tracking-tighter mb-8 uppercase leading-[0.9]">${project.title}</h1>
-                            <p class="text-2xl text-gray-600 font-bold mb-12 leading-tight">${project.desc}</p>
-                            <div class="w-full h-96 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-200 font-black text-2xl uppercase tracking-tighter">Project Preview</div>
-                        </div>
-                    `;
+                    innerHtml += `<div class="w-full h-96 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-200 font-black text-2xl uppercase">Coming Soon</div>`;
                 }
-                
-                contentDiv.innerHTML = innerHtml;
-                contentDiv.classList.remove('opacity-0');
-                contentDiv.classList.add('opacity-100');
+                contentDiv.innerHTML = innerHtml + `</div>`;
+                contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
             }, 300);
         }
 
-        function closeModal() {
-            document.getElementById('modalContainer').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+        function closeModal() { document.getElementById('modalContainer').style.display = 'none'; document.body.style.overflow = 'auto'; }
     </script>
 </body>
 </html>
