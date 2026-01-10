@@ -368,7 +368,7 @@
                     <div class="calendar-grid" id="calendarGrid"></div>
                 </div>
 
-                <!-- DESIGNING EXPERIENCE (수정 금지 영역) -->
+                <!-- UIUX 카드 (수정 금지 영역) -->
                 <div class="col-span-2 widget overflow-hidden relative group h-64" onclick="openModal('uiuxList')">
                     <div class="work-card-mesh"></div>
                     <div class="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -434,10 +434,11 @@
     </div>
 
     <script>
-        // 깃허브 이미지 경로 생성 (사용자님 정보: rangbo / borang)
+        // 깃허브 원본 파일(Raw) 이미지 경로 생성 함수
         const githubUser = "rangbo";
         const repoName = "borang";
-        const getGithubImg = (fileName) => `https://raw.githubusercontent.com/${githubUser}/${repoName}/main/${encodeURIComponent(fileName)}`;
+        // 실제 이미지를 불러오는 핵심 주소 (Raw Content) - 브랜치명 'master' 적용
+        const getGithubImg = (fileName) => `https://raw.githubusercontent.com/${githubUser}/${repoName}/master/${encodeURIComponent(fileName)}`;
 
         const projectData = {
             'uiux1': { category: 'UIUX', year: '2025', title: 'Fintech Mobile App', desc: '금융 정보를 직관적으로 설계했습니다.' },
