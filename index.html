@@ -58,7 +58,7 @@
             background: rgba(255, 255, 255, 0.95) !important;
         }
 
-        /* UIUX 카드 애니메이션 배경 */
+        /* UIUX 카드 애니메이션 배경 (수정 금지) */
         .work-card-mesh {
             position: absolute;
             inset: 0;
@@ -261,7 +261,7 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
-        /* 갤러리 이미지 및 확대 효과 */
+        /* 갤러리 레이아웃 및 확대 효과 */
         .gallery-item-wrapper {
             overflow: hidden;
             border-radius: 1.25rem;
@@ -282,7 +282,7 @@
             transform: scale(1.05);
         }
 
-        /* 라이트박스(상세보기) */
+        /* 라이트박스 */
         .lightbox-overlay {
             display: none;
             position: fixed;
@@ -290,29 +290,33 @@
             background: rgba(0, 0, 0, 0.95);
             z-index: 200;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* 긴 이미지를 위해 상단부터 정렬 */
             align-items: center;
-            padding: 40px;
+            padding: 40px 20px;
             cursor: zoom-out;
             animation: fadeIn 0.3s ease;
+            overflow-y: auto; /* 긴 이미지를 위해 스크롤 허용 */
         }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .lightbox-img {
-            max-width: 90%;
-            max-height: 85vh;
+            max-width: 900px; /* 가독성을 위한 최대 너비 제한 */
+            width: 95%;
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 0 50px rgba(0,0,0,0.5);
             object-fit: contain;
+            margin: auto; /* 상하 스크롤 시 중앙 유지 */
             animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
         .lightbox-close {
-            position: absolute; top: 30px; right: 40px;
+            position: fixed; top: 30px; right: 40px;
             color: white; font-size: 32px; cursor: pointer; font-weight: 200;
+            z-index: 210;
         }
     </style>
 </head>
@@ -415,7 +419,7 @@
                     </div>
                 </div>
 
-                <!-- Editorial & Web Content (2단 레이아웃) -->
+                <!-- Editorial & Web Content -->
                 <div class="col-span-1 widget h-48 group" onclick="openModal('printList')">
                     <div class="editorial-image"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover"></div>
                     <div class="editorial-overlay"></div>
@@ -430,6 +434,7 @@
                         <div class="flex flex-col items-start space-y-1">
                             <div class="todo-item"><div class="todo-check"></div><span class="text-[13.5px] font-medium text-gray-700">SNS 배너 제작</span></div>
                             <div class="todo-item"><div class="todo-check"></div><span class="text-[13.5px] font-medium text-gray-700">마케팅 팝업 제작</span></div>
+                            <div class="todo-item"><div class="todo-check"></div><span class="text-[13.5px] font-medium text-gray-700">랜딩페이지 제작</span></div>
                         </div>
                     </div>
                     <div class="text-left pb-4">
@@ -447,8 +452,11 @@
                 <div class="dock-icon icon-phone" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.97,14.94C18.7,14.51 17.3,14.51 16.03,14.94L13.89,17.08C10.66,15.44 8.01,12.79 6.37,9.56L8.51,7.42C8.94,6.15 8.94,4.75 8.51,3.48L7.87,1.54C7.5,0.42 6.44,-0.25 5.27,0.07L1.87,1.01C0.79,1.31 0,2.29 0,3.41C0,14.78 9.22,24 20.59,24C21.71,24 22.69,23.21 22.69,22.13L23.93,18.73C24.25,17.56 23.58,16.5 22.46,16.13L20.52,15.49L19.97,14.94Z" /></svg></div>
                 <div class="dock-icon icon-mail" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20,4H4C1.79,4 0,5.79 0,8V16C0,18.21 1.79,20 4,20H20C22.21,20 24,18.21 24,16V8C24,5.79 22.21,4 20,4M20,8.6L12,13.6L4,8.6V8L12,13L20,8V8.6Z" /></svg></div>
                 <div class="dock-icon icon-kakao" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12,2C5.37,2 0,6.03 0,11C0,14.18 2.21,16.94 5.5,18.52C5.3,19.26 4.5,22.19 4.4,22.56C4.3,23 4.6,23 4.8,22.86C5,22.77 7.2,21.32 9.8,19.64C10.5,19.87 11.2,20 12,20C18.63,20 24,15.97 24,11C24,6.03 18.63,2,12,2Z" /></svg></div>
-                <div class="dock-icon icon-gallery" onclick="openModal('gallery')">
-                    <svg width="32" height="32" viewBox="0 0 100 100"><defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs><circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /></svg>
+                <div class="dock-icon icon-gallery" onclick="openModal('gallery')" title="갤러리">
+                    <svg width="32" height="32" viewBox="0 0 100 100">
+                        <defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs>
+                        <circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" />
+                    </svg>
                 </div>
             </div>
         </div>
@@ -462,10 +470,10 @@
         </div>
     </div>
 
-    <!-- 라이트박스 -->
+    <!-- 라이트박스 (원본 상세보기) -->
     <div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox()">
         <span class="lightbox-close">✕</span>
-        <img id="lightboxImg" class="lightbox-img" src="" alt="상세 이미지">
+        <img id="lightboxImg" class="lightbox-img" src="" alt="확대 상세 이미지">
     </div>
 
     <script>
@@ -495,7 +503,26 @@
                     getGithubImg('poster3.png'), getGithubImg('poster4.png')
                 ]
             },
-            'web1': { category: 'Web Content', year: '2025', title: 'SNS Summer Campaign', desc: '역동적인 마케팅 배너 세트입니다.' }
+            'print_etc': {
+                category: 'Editorial',
+                year: '2024',
+                title: 'Graphic Archive',
+                desc: '현수막, 쿠폰, 전단지, 각종 안내판 등 다양한 기타 인쇄물 디자인 모음입니다.',
+                images: [
+                    getGithubImg('editorial1.png'), getGithubImg('editorial2.png'), getGithubImg('editorial3.png'), 
+                    getGithubImg('editorial4.png'), getGithubImg('editorial5.png'), getGithubImg('editorial6.png'), 
+                    getGithubImg('editorial7.png'), getGithubImg('editorial8.png')
+                ]
+            },
+            'web_banner': {
+                category: 'Web Content',
+                year: '2024',
+                title: 'Mobile Banner & Popup',
+                desc: '모바일 환경에 최적화된 마케팅 팝업 및 이벤트 배너 디자인 아카이브입니다.',
+                images: [
+                    getGithubImg('web1.png'), getGithubImg('web2.png')
+                ]
+            }
         };
 
         function updateClock() {
@@ -504,9 +531,9 @@
             const minutes = String(now.getMinutes()).padStart(2, '0');
             document.getElementById('currentTime').textContent = `${String(hours % 12 || 12).padStart(2, '0')}:${minutes}`;
             document.getElementById('ampm').textContent = hours >= 12 ? 'PM' : 'AM';
-            const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-            const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-            document.getElementById('currentDate').textContent = `${months[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')}, ${days[now.getDay()]}`;
+            const monthsShort = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+            const daysShort = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+            document.getElementById('currentDate').textContent = `${monthsShort[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')}, ${daysShort[now.getDay()]}`;
         }
 
         function renderCalendar() {
@@ -576,33 +603,32 @@
                                 </div>
                             </div>
                         </div>`;
-                } else if (viewId === 'printList') {
-                    // Editorial 위젯 클릭 시 목록 표시 (Catalog와 Poster가 함께 나옴)
-                    const filtered = Object.entries(projectData).filter(([k, v]) => v.category === 'Editorial');
-                    html = `<h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">Editorial Projects</h1>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                ${filtered.map(([id, p]) => `
-                                    <div class="project-item" onclick="openProject('${id}')">
-                                        <span class="text-pink-500 font-bold text-xs uppercase tracking-widest">${p.year}</span>
-                                        <h3 class="text-2xl font-black text-gray-800 mt-2">${p.title}</h3>
-                                        <p class="text-gray-500 text-sm mt-2">${p.desc}</p>
-                                    </div>
-                                `).join('')}
-                            </div>`;
-                } else if (viewId === 'uiuxList' || viewId === 'webContentList') {
-                    const category = viewId === 'uiuxList' ? 'UIUX' : 'Web Content';
+                } else if (viewId === 'printList' || viewId === 'webContentList') {
+                    const category = viewId === 'printList' ? 'Editorial' : 'Web Content';
                     const filtered = Object.entries(projectData).filter(([k, v]) => v.category === category);
                     html = `<h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">${category} Projects</h1>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 ${filtered.map(([id, p]) => `
                                     <div class="project-item" onclick="openProject('${id}')">
+                                        <span class="text-pink-500 font-bold text-xs uppercase tracking-widest">${p.year}</span>
+                                        <h3 class="text-2xl font-black text-gray-800 mt-2 uppercase">${p.title}</h3>
+                                        <p class="text-gray-500 text-sm mt-2">${p.desc}</p>
+                                    </div>
+                                `).join('')}
+                            </div>`;
+                } else if (viewId === 'uiuxList') {
+                    const filtered = Object.entries(projectData).filter(([k, v]) => v.category === 'UIUX');
+                    html = `<h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">UIUX Projects</h1>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                ${filtered.map(([id, p]) => `
+                                    <div class="project-item" onclick="openProject('${id}')">
                                         <span class="text-pink-500 font-bold text-xs uppercase">${p.year}</span>
-                                        <h3 class="text-2xl font-black text-gray-800 mt-2">${p.title}</h3>
+                                        <h3 class="text-2xl font-black text-gray-800 mt-2 uppercase">${p.title}</h3>
                                     </div>
                                 `).join('')}
                             </div>`;
                 }
-                contentDiv.innerHTML = html; contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
+                contentDiv.innerHTML = html; contentDiv.classList.replace('opacity-0', 'opacity-100');
             }, 300);
         }
 
@@ -614,7 +640,7 @@
                 let innerHtml = `<div class="max-w-5xl mx-auto">
                     <div class="mb-12 pb-8 border-b border-gray-100">
                         <p class="text-pink-500 font-black text-xs uppercase mb-4">${project.category} — ${project.year}</p>
-                        <h1 class="text-7xl font-black tracking-tighter mb-4">${project.title}</h1>
+                        <h1 class="text-7xl font-black tracking-tighter mb-4 uppercase">${project.title}</h1>
                         <p class="text-2xl text-gray-600 font-bold">${project.desc}</p>
                     </div>`;
                 if (project.images) {
@@ -636,8 +662,10 @@
         function openLightbox(src) {
             const overlay = document.getElementById('lightboxOverlay');
             const img = document.getElementById('lightboxImg');
-            img.src = src; overlay.style.display = 'flex';
+            img.src = src; 
+            overlay.style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            overlay.scrollTop = 0; // 항상 맨 위부터 보이도록 설정
         }
 
         function closeLightbox() {
