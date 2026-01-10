@@ -242,7 +242,7 @@
             height: 100%;
         }
 
-        /* 프로필 하단 태그 gd 스타일 */
+        /* 프로필 하단 태그 스타일 */
         .skill-tag {
             padding: 4px 10px;
             background: rgba(244, 114, 182, 0.1);
@@ -269,6 +269,20 @@
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+        }
+
+        /* 갤러리 이미지 스타일 */
+        .editorial-gallery-img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: block;
+            object-fit: cover;
+        }
+        .editorial-gallery-img:hover {
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -460,6 +474,17 @@
         const projectData = {
             'uiux1': { category: 'UIUX', year: '2025', title: 'Fintech Mobile App', desc: '금융 정보를 직관적으로 설계했습니다.' },
             'uiux2': { category: 'UIUX', year: '2024', title: 'Travel Booking', desc: '여행지 탐색 시스템을 구축했습니다.' },
+            'print_catalog': { 
+                category: 'Editorial', 
+                year: '2024', 
+                title: 'Catalog Archive', 
+                desc: '카달로그 및 리플렛 인쇄물 디자인 모음입니다.',
+                images: [
+                    'WWWWWWWW.jpg', 'www.jpg', 'td03630000862.jpg', 
+                    'wwww.jpg', 'ww.jpg', 'wwwwwww.jpg', 
+                    'wwwww.jpg', 'wwwwwww 1.jpg', 'WWWWWWWW 1.jpg'
+                ]
+            },
             'print1': { category: 'Editorial', year: '2024', title: 'Brand Identity Book', desc: '브랜드 가이드북 프로젝트입니다.' },
             'print2': { category: 'Editorial', year: '2023', title: 'Arts Exhibition', desc: '도록 디자인을 진행했습니다.' },
             'web1': { category: 'Web Content', year: '2025', title: 'SNS Summer Campaign', desc: '역동적인 마케팅 배너 세트입니다.' },
@@ -539,6 +564,14 @@
                                             <span class="info-list-date">2022.12</span>
                                             <span class="info-list-text text-base">React&Redux 웹 프로그래밍 수료</span>
                                         </div>
+                                        <div class="info-list-item">
+                                            <span class="info-list-date">2023.07</span>
+                                            <span class="info-list-text text-base">웹퍼블리싱 완전 정복 수료</span>
+                                        </div>
+                                        <div class="info-list-item">
+                                            <span class="info-list-date">2024.01</span>
+                                            <span class="info-list-text text-base">UIUX 디자인 심화 과정 수료</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="modal-info-card">
@@ -589,8 +622,21 @@
                                 </div>
                             </div>
                         </div>`;
-                } else if (viewId === 'uiuxList' || viewId === 'printList' || viewId === 'webContentList') {
-                    const category = viewId === 'uiuxList' ? 'UIUX' : (viewId === 'printList' ? 'Editorial' : 'Web Content');
+                } else if (viewId === 'printList') {
+                    const filtered = Object.entries(projectData).filter(([k, v]) => v.category === 'Editorial');
+                    html = `
+                        <h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">Editorial Projects</h1>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            ${filtered.map(([id, p]) => `
+                                <div class="project-item" onclick="openProject('${id}')">
+                                    <span class="text-pink-500 font-bold text-xs uppercase tracking-widest">${p.year}</span>
+                                    <h3 class="text-2xl font-black text-gray-800 mt-2">${p.title}</h3>
+                                    <p class="text-gray-500 text-sm mt-2">${p.desc}</p>
+                                </div>
+                            `).join('')}
+                        </div>`;
+                } else if (viewId === 'uiuxList' || viewId === 'webContentList') {
+                    const category = viewId === 'uiuxList' ? 'UIUX' : 'Web Content';
                     const filtered = Object.entries(projectData).filter(([k, v]) => v.category === category);
                     html = `<h1 class="text-5xl font-black mb-12 tracking-tighter uppercase">${category} Projects</h1><div class="grid grid-cols-1 md:grid-cols-2 gap-6">${filtered.map(([id, p]) => `<div class="project-item" onclick="openProject('${id}')"><span class="text-pink-500 font-bold text-xs">${p.year}</span><h3 class="text-2xl font-black text-gray-800">${p.title}</h3><p class="text-gray-500 text-sm">${p.desc}</p></div>`).join('')}</div>`;
                 } else if (viewId === 'gallery') {
@@ -609,8 +655,44 @@
             const contentDiv = document.getElementById('modalContent');
             contentDiv.classList.remove('opacity-100');
             contentDiv.classList.add('opacity-0');
+            
             setTimeout(() => {
-                contentDiv.innerHTML = `<div class="max-w-3xl"><p class="text-pink-500 font-black mb-4 uppercase tracking-widest text-xs">${project.category} — ${project.year}</p><h1 class="text-7xl font-black tracking-tighter mb-8 uppercase leading-[0.9]">${project.title}</h1><p class="text-2xl text-gray-600 font-bold mb-12 leading-tight">${project.desc}</p><div class="w-full h-96 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-200 font-black text-2xl">PROJECT PREVIEW</div></div>`;
+                let innerHtml = '';
+                
+                // Catalog Archive (이미지 갤러리) 레이아웃
+                if (project.images && project.images.length > 0) {
+                    innerHtml = `
+                        <div class="max-w-5xl mx-auto">
+                            <div class="mb-12 border-b border-gray-100 pb-8">
+                                <p class="text-pink-500 font-black mb-4 uppercase tracking-widest text-xs">${project.category} — ${project.year}</p>
+                                <h1 class="text-7xl font-black tracking-tighter mb-4 uppercase leading-[0.9]">${project.title}</h1>
+                                <p class="text-2xl text-gray-600 font-bold leading-tight">${project.desc}</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                ${project.images.map(img => `
+                                    <div class="flex flex-col gap-2 group">
+                                        <div class="overflow-hidden rounded-[1rem] shadow-sm">
+                                            <img src="${img}" alt="Catalog image" class="editorial-gallery-img group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/600x800?text=Catalog+Image'">
+                                        </div>
+                                        <p class="text-[10px] text-gray-300 font-bold uppercase tracking-widest pl-1 mt-2 truncate">${img}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // 일반 프로젝트 상세 레이아웃
+                    innerHtml = `
+                        <div class="max-w-3xl mx-auto">
+                            <p class="text-pink-500 font-black mb-4 uppercase tracking-widest text-xs">${project.category} — ${project.year}</p>
+                            <h1 class="text-7xl font-black tracking-tighter mb-8 uppercase leading-[0.9]">${project.title}</h1>
+                            <p class="text-2xl text-gray-600 font-bold mb-12 leading-tight">${project.desc}</p>
+                            <div class="w-full h-96 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-200 font-black text-2xl uppercase tracking-tighter">Project Preview</div>
+                        </div>
+                    `;
+                }
+                
+                contentDiv.innerHTML = innerHtml;
                 contentDiv.classList.remove('opacity-0');
                 contentDiv.classList.add('opacity-100');
             }, 300);
