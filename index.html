@@ -341,10 +341,9 @@
                 </div>
             </div>
 
-            <!-- Right Side -->
+            <!-- Right Side Widgets -->
             <div class="col-span-12 lg:col-span-8 grid grid-cols-2 gap-6 h-full">
                 
-                <!-- 시계 -->
                 <div class="widget glass-widget p-6 flex flex-col justify-center items-center text-center">
                     <div class="clock-container">
                         <div class="clock-bg-blur"></div>
@@ -359,7 +358,6 @@
                     </div>
                 </div>
 
-                <!-- 달력 -->
                 <div class="widget glass-widget p-6 flex flex-col justify-center items-center">
                     <div class="flex justify-between w-full mb-3 px-1">
                         <span id="calMonth" class="text-[11px] font-bold text-pink-500 uppercase tracking-widest">January</span>
@@ -368,7 +366,7 @@
                     <div class="calendar-grid" id="calendarGrid"></div>
                 </div>
 
-                <!-- UIUX 카드 (수정 금지 영역) -->
+                <!-- DESIGNING EXPERIENCE (디자인 보존) -->
                 <div class="col-span-2 widget overflow-hidden relative group h-64" onclick="openModal('uiuxList')">
                     <div class="work-card-mesh"></div>
                     <div class="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -384,7 +382,6 @@
                     </div>
                 </div>
 
-                <!-- Editorial -->
                 <div class="col-span-1 widget h-48 group" onclick="openModal('printList')">
                     <div class="editorial-image"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover"></div>
                     <div class="editorial-overlay"></div>
@@ -394,7 +391,7 @@
                     </div>
                 </div>
 
-                <!-- Web Content (시계 숫자와 색상 통일) -->
+                <!-- Web Content (색상 보존) -->
                 <div class="col-span-1 widget white-menu-widget h-48 group p-6 flex flex-col justify-center" onclick="openModal('webContentList')">
                     <div class="flex justify-end mb-auto pt-12 pr-1">
                         <div class="flex flex-col items-start space-y-1">
@@ -405,21 +402,25 @@
                     </div>
                     <div class="text-left pb-12">
                         <span class="bg-pink-500 text-white px-4 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest shadow-sm mb-2 inline-block">Promotion</span>
-                        <p class="font-black text-gray-800 tracking-tighter text-3xl uppercase leading-none">WEB<br>CONTENT</p>
+                        <p class="font-black text-gray-800 tracking-tighter text-3xl uppercase leading-none">
+                            WEB<br>CONTENT
+                        </p>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- 하단 Dock -->
         <div class="mt-12 flex justify-center">
             <div class="dock-container">
                 <div class="dock-icon icon-phone" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.97,14.94C18.7,14.51 17.3,14.51 16.03,14.94L13.89,17.08C10.66,15.44 8.01,12.79 6.37,9.56L8.51,7.42C8.94,6.15 8.94,4.75 8.51,3.48L7.87,1.54C7.5,0.42 6.44,-0.25 5.27,0.07L1.87,1.01C0.79,1.31 0,2.29 0,3.41C0,14.78 9.22,24 20.59,24C21.71,24 22.69,23.21 22.69,22.13L23.93,18.73C24.25,17.56 23.58,16.5 22.46,16.13L20.52,15.49L19.97,14.94Z" /></svg></div>
                 <div class="dock-icon icon-mail" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20,4H4C1.79,4 0,5.79 0,8V16C0,18.21 1.79,20 4,20H20C22.21,20 24,18.21 24,16V8C24,5.79 22.21,4 20,4M20,8.6L12,13.6L4,8.6V8L12,13L20,8V8.6Z" /></svg></div>
                 <div class="dock-icon icon-kakao" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12,2C5.37,2 0,6.03 0,11C0,14.18 2.21,16.94 5.5,18.52C5.3,19.26 4.5,22.19 4.4,22.56C4.3,23 4.6,23 4.8,22.86C5,22.77 7.2,21.32 9.8,19.64C10.5,19.87 11.2,20 12,20C18.63,20 24,15.97 24,11C24,6.03 18.63,2,12,2Z" /></svg></div>
-                <div class="dock-icon icon-gallery" onclick="openModal('gallery')">
-                    <svg width="32" height="32" viewBox="0 0 100 100"><defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs><circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /></svg>
+                <div class="dock-icon icon-gallery" onclick="openModal('gallery')" title="갤러리">
+                    <svg width="32" height="32" viewBox="0 0 100 100">
+                        <defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs>
+                        <circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" />
+                    </svg>
                 </div>
             </div>
         </div>
@@ -434,11 +435,9 @@
     </div>
 
     <script>
-        // 깃허브 원본 파일(Raw) 이미지 경로 생성 함수
-        const githubUser = "rangbo";
-        const repoName = "borang";
-        // 실제 이미지를 불러오는 핵심 주소 (Raw Content) - 브랜치명 'master' 적용
-        const getGithubImg = (fileName) => `https://raw.githubusercontent.com/${githubUser}/${repoName}/master/${encodeURIComponent(fileName)}`;
+        // 깃허브 페이지 주소와 images 폴더 구조를 직접 활용
+        const githubPagesBase = "https://rangbo.github.io/borang/images/";
+        const getGithubImg = (fileName) => `${githubPagesBase}${encodeURIComponent(fileName)}`;
 
         const projectData = {
             'uiux1': { category: 'UIUX', year: '2025', title: 'Fintech Mobile App', desc: '금융 정보를 직관적으로 설계했습니다.' },
@@ -448,10 +447,10 @@
                 title: 'Catalog Archive', 
                 desc: '카달로그 및 리플렛 인쇄물 디자인 모음입니다.',
                 images: [
-                    getGithubImg('WWWWWWWW.jpg'), getGithubImg('www.jpg'), getGithubImg('td03630000862.jpg'), 
-                    getGithubImg('wwww.jpg'), getGithubImg('ww.jpg'), getGithubImg('wwwwwww.jpg'), 
-                    getGithubImg('wwwww.jpg'), getGithubImg('wwwwwww 1.jpg'), getGithubImg('WWWWWWWW 1.jpg'),
-                    getGithubImg('image_e64afd.png'), getGithubImg('image_e64b20.png')
+                    getGithubImg('catalog1.png'), getGithubImg('catalog2.png'), getGithubImg('catalog3.png'), 
+                    getGithubImg('catalog4.png'), getGithubImg('catalog5.png'), getGithubImg('catalog6.png'), 
+                    getGithubImg('catalog7.png'), getGithubImg('catalog8.png'), getGithubImg('catalog9.png'),
+                    getGithubImg('catalog10.png'), getGithubImg('catalog11.png')
                 ]
             }
         };
@@ -463,9 +462,9 @@
             const displayHours = hours % 12 || 12;
             document.getElementById('currentTime').textContent = `${String(displayHours).padStart(2, '0')}:${minutes}`;
             document.getElementById('ampm').textContent = hours >= 12 ? 'PM' : 'AM';
-            const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-            const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-            document.getElementById('currentDate').textContent = `${months[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')}, ${days[now.getDay()]}`;
+            const monthsShort = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+            const daysShort = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+            document.getElementById('currentDate').textContent = `${monthsShort[now.getMonth()]} ${String(now.getDate()).padStart(2, '0')}, ${daysShort[now.getDay()]}`;
         }
 
         function renderCalendar() {
@@ -489,7 +488,7 @@
             const contentDiv = document.getElementById('modalContent');
             document.getElementById('modalContainer').style.display = 'block';
             document.body.style.overflow = 'hidden';
-            contentDiv.classList.remove('opacity-100'); contentDiv.classList.add('opacity-0');
+            contentDiv.classList.replace('opacity-100', 'opacity-0');
 
             setTimeout(() => {
                 let html = '';
@@ -497,7 +496,7 @@
                     html = `
                         <div class="max-w-4xl mx-auto">
                             <h1 class="text-7xl font-black mb-4 uppercase text-gray-900 leading-none">LEE BORANG</h1>
-                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Web Publisher</p>
+                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Publisher</p>
                             
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                                 <div class="modal-info-card">
@@ -530,7 +529,7 @@
                                 <div class="space-y-6 text-gray-300 text-lg leading-relaxed font-medium">
                                     <p class="text-3xl font-black text-white leading-tight">"사용자의 경험을 디자인하고 개발자의 효율을 코딩합니다"</p>
                                     <p>커리어의 시작부터 자사몰의 웹과 앱 디자인 개편을 주도하고, 신규 쇼핑몰 오픈부터 오픈마켓 입점 관리, 상세페이지 및 각종 이벤트 배너 제작까지 이커머스의 전 과정을 깊이 있게 경험했습니다. 이후 약 40여 개의 다양한 프로젝트를 거치며 UIUX 디자인부터 퍼블리싱, 브랜드 인쇄 매체까지 디자인의 영역을 확장해 왔습니다. 특히 30,000명 이상의 유저가 활동하는 대규모 서비스의 디자인 구축에 참여하며 데이터 기반의 사용자 경험을 설계하는 법을 익혔습니다.</p>
-                                    <p>공공배달앱 고도화 프로젝트를 통해 세탁 예약, 공동구매, 소모임, 헬스케어, 선물하기 등 일상의 밀접한 서비스들을 정교한 UI로 녹여냈습니다. 단순히 시각적인 화려함에 그치지 않고 사용자가 가장 편안하게 느끼는 UX와 개발자가 효율적으로 작업할 수 있는 구조적인 코드를 만드는 것을 저의 확고한 디자인 철학으로 삼고 있습니다.</p>
+                                    <p>공공배달앱 고도화 프로젝트를 통해 세탁 예약, 공동구매, 소모임, 헬스케어, 선물하기 등 일상의 밀접한 서비스들을 정교한 UI로 구현해냈습니다. 단순히 시각적인 화려함에 그치지 않고 사용자가 가장 편안하게 느끼는 UX와 개발자가 효율적으로 작업할 수 있는 구조적인 코드를 만드는 것을 저의 확고한 디자인 철학으로 삼고 있습니다.</p>
                                 </div>
                             </div>
                         </div>`;
@@ -539,23 +538,23 @@
                 } else if (viewId === 'uiuxList') {
                     html = `<h1 class="text-5xl font-black mb-12 uppercase">UIUX Projects</h1><div class="project-item" onclick="openProject('uiux1')"><span class="text-pink-500 font-bold text-xs uppercase">2025</span><h3 class="text-2xl font-black text-gray-800 mt-2">Fintech Mobile App</h3></div>`;
                 }
-                contentDiv.innerHTML = html; contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
+                contentDiv.innerHTML = html; contentDiv.classList.replace('opacity-0', 'opacity-100');
             }, 300);
         }
 
         function openProject(id) {
             const project = projectData[id];
             const contentDiv = document.getElementById('modalContent');
-            contentDiv.classList.remove('opacity-100'); contentDiv.classList.add('opacity-0');
+            contentDiv.classList.replace('opacity-100', 'opacity-0');
             setTimeout(() => {
                 let innerHtml = `<div class="max-w-5xl mx-auto"><div class="mb-12 pb-8 border-b border-gray-100"><p class="text-pink-500 font-black text-xs uppercase mb-4">${project.category} — ${project.year}</p><h1 class="text-7xl font-black tracking-tighter mb-4">${project.title}</h1><p class="text-2xl text-gray-600 font-bold">${project.desc}</p></div>`;
                 if (project.images) {
-                    innerHtml += `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${project.images.map(img => `<img src="${img}" class="editorial-gallery-img" onerror="this.src='https://via.placeholder.com/600x800?text=Check+Filename'">`).join('')}</div>`;
+                    innerHtml += `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">${project.images.map(img => `<img src="${img}" class="editorial-gallery-img" onerror="this.src='https://via.placeholder.com/600x800?text=Check+Images+Folder'">`).join('')}</div>`;
                 } else {
                     innerHtml += `<div class="w-full h-96 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-200 font-black text-2xl uppercase">Coming Soon</div>`;
                 }
                 contentDiv.innerHTML = innerHtml + `</div>`;
-                contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
+                contentDiv.classList.replace('opacity-0', 'opacity-100');
             }, 300);
         }
 
