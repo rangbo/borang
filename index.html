@@ -29,7 +29,7 @@
             position: relative;
         }
 
-        /* 일반 위젯 공통 스타일 */
+        /* 위젯 공통 스타일 */
         .widget {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
@@ -48,21 +48,17 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
         }
 
-        /* 시계/달력 전용 글래스 스타일 */
         .glass-widget {
             background: rgba(255, 255, 255, 0.8) !important;
             backdrop-filter: blur(30px) !important;
             border: 1px solid rgba(255, 255, 255, 0.7) !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
         }
 
-        /* WEB CONTENT 전용 화이트 스타일 */
         .white-menu-widget {
             background: rgba(255, 255, 255, 0.95) !important;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04) !important;
         }
 
-        /* UIUX 카드 배경 애니메이션 (수정 금지 영역) */
+        /* UIUX 카드 애니메이션 배경 */
         .work-card-mesh {
             position: absolute;
             inset: 0;
@@ -116,15 +112,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-        
-        .clock-bg-blur {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(244, 114, 182, 0.15) 0%, transparent 70%);
-            z-index: 0;
-            pointer-events: none;
         }
 
         .calendar-grid {
@@ -207,6 +194,12 @@
             transition: all 0.4s ease; border: 1px solid #f1f1f1; cursor: pointer;
         }
 
+        .project-item:hover {
+            border-color: #f472b6;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 114, 182, 0.1);
+        }
+
         .todo-item { display: flex; align-items: center; gap: 8px; padding: 1px 0; }
         .todo-check {
             width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid #f472b6;
@@ -268,7 +261,7 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
-        /* 갤러리 이미지 및 호버 효과 */
+        /* 갤러리 이미지 및 확대 효과 */
         .gallery-item-wrapper {
             overflow: hidden;
             border-radius: 1.25rem;
@@ -289,7 +282,7 @@
             transform: scale(1.05);
         }
 
-        /* 라이트박스(원본 자세히 보기) 레이어 */
+        /* 라이트박스(상세보기) */
         .lightbox-overlay {
             display: none;
             position: fixed;
@@ -304,10 +297,7 @@
             animation: fadeIn 0.3s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .lightbox-img {
             max-width: 90%;
@@ -318,19 +308,11 @@
             animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
+        @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
         .lightbox-close {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            color: white;
-            font-size: 32px;
-            cursor: pointer;
-            font-weight: 200;
+            position: absolute; top: 30px; right: 40px;
+            color: white; font-size: 32px; cursor: pointer; font-weight: 200;
         }
     </style>
 </head>
@@ -395,15 +377,15 @@
             <!-- Right Side Widgets -->
             <div class="col-span-12 lg:col-span-8 grid grid-cols-2 gap-6 h-full">
                 
+                <!-- 시계/달력 -->
                 <div class="widget glass-widget p-6 flex flex-col justify-center items-center text-center">
                     <div class="clock-container">
-                        <div class="clock-bg-blur"></div>
-                        <span id="currentDate" class="text-[11px] font-extrabold uppercase tracking-[0.3em] text-pink-500 mb-2 z-10">JAN 08, THU</span>
-                        <div class="flex items-baseline gap-1 z-10">
+                        <span id="currentDate" class="text-[11px] font-extrabold uppercase tracking-[0.3em] text-pink-500 mb-2">JAN 08, THU</span>
+                        <div class="flex items-baseline gap-1">
                             <span id="currentTime" class="text-6xl font-black text-gray-800 tracking-tighter">14:26</span>
                             <span id="ampm" class="text-sm font-bold text-pink-500 uppercase">PM</span>
                         </div>
-                        <div class="w-16 h-1 bg-pink-100 rounded-full mt-4 z-10">
+                        <div class="w-16 h-1 bg-pink-100 rounded-full mt-4">
                             <div id="hourProgress" class="h-full bg-pink-400 rounded-full" style="width: 60%"></div>
                         </div>
                     </div>
@@ -417,7 +399,7 @@
                     <div class="calendar-grid" id="calendarGrid"></div>
                 </div>
 
-                <!-- DESIGNING EXPERIENCE (수정 금지 영역) -->
+                <!-- DESIGNING EXPERIENCE (UIUX) -->
                 <div class="col-span-2 widget overflow-hidden relative group h-64" onclick="openModal('uiuxList')">
                     <div class="work-card-mesh"></div>
                     <div class="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -433,6 +415,7 @@
                     </div>
                 </div>
 
+                <!-- Editorial & Web Content (2단 레이아웃) -->
                 <div class="col-span-1 widget h-48 group" onclick="openModal('printList')">
                     <div class="editorial-image"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2670&auto=format&fit=crop" class="w-full h-full object-cover"></div>
                     <div class="editorial-overlay"></div>
@@ -442,16 +425,14 @@
                     </div>
                 </div>
 
-                <!-- Web Content (시계 숫자와 색상 통일) -->
                 <div class="col-span-1 widget white-menu-widget h-48 group p-6 flex flex-col justify-center" onclick="openModal('webContentList')">
-                    <div class="flex justify-end mb-auto pt-12 pr-1">
+                    <div class="flex justify-end mb-auto pr-1">
                         <div class="flex flex-col items-start space-y-1">
                             <div class="todo-item"><div class="todo-check"></div><span class="text-[13.5px] font-medium text-gray-700">SNS 배너 제작</span></div>
                             <div class="todo-item"><div class="todo-check"></div><span class="text-[13.5px] font-medium text-gray-700">마케팅 팝업 제작</span></div>
-                            <div class="todo-item"><div class="todo-check"></div><span class="text-[13.5px] font-medium text-gray-700">랜딩페이지 제작</span></div>
                         </div>
                     </div>
-                    <div class="text-left pb-12">
+                    <div class="text-left pb-4">
                         <span class="bg-pink-500 text-white px-4 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest shadow-sm mb-2 inline-block">Promotion</span>
                         <p class="font-black text-gray-800 tracking-tighter text-3xl uppercase leading-none">WEB<br>CONTENT</p>
                     </div>
@@ -473,7 +454,7 @@
         </div>
     </div>
 
-    <!-- 모달 -->
+    <!-- 모달 컨테이너 -->
     <div id="modalContainer" class="modal">
         <div id="closeBtn" class="close-btn" onclick="closeModal()">✕</div>
         <div class="container mx-auto px-6 py-24 max-w-5xl">
@@ -481,14 +462,13 @@
         </div>
     </div>
 
-    <!-- 라이트박스(원본 상세보기) -->
+    <!-- 라이트박스 -->
     <div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox()">
         <span class="lightbox-close">✕</span>
-        <img id="lightboxImg" class="lightbox-img" src="" alt="확대 이미지">
+        <img id="lightboxImg" class="lightbox-img" src="" alt="상세 이미지">
     </div>
 
     <script>
-        // 깃허브 페이지 주소와 images 폴더 구조를 직접 활용
         const githubPagesBase = "https://rangbo.github.io/borang/images/";
         const getGithubImg = (fileName) => `${githubPagesBase}${encodeURIComponent(fileName)}`;
 
@@ -502,17 +482,27 @@
                 images: [
                     getGithubImg('catalog1.png'), getGithubImg('catalog2.png'), getGithubImg('catalog3.png'), 
                     getGithubImg('catalog4.png'), getGithubImg('catalog5.png'), getGithubImg('catalog6.png'), 
-                    getGithubImg('catalog7.png'), getGithubImg('catalog8.png'), getGithubImg('catalog9.png')
+                    getGithubImg('catalog7.png')
                 ]
-            }
+            },
+            'print_poster': {
+                category: 'Editorial',
+                year: '2024',
+                title: 'Poster Archive',
+                desc: '다양한 주제의 그래픽 포스터 디자인 모음입니다.',
+                images: [
+                    getGithubImg('poster1.png'), getGithubImg('poster2.png'), 
+                    getGithubImg('poster3.png'), getGithubImg('poster4.png')
+                ]
+            },
+            'web1': { category: 'Web Content', year: '2025', title: 'SNS Summer Campaign', desc: '역동적인 마케팅 배너 세트입니다.' }
         };
 
         function updateClock() {
             const now = new Date();
             let hours = now.getHours();
             const minutes = String(now.getMinutes()).padStart(2, '0');
-            const displayHours = hours % 12 || 12;
-            document.getElementById('currentTime').textContent = `${String(displayHours).padStart(2, '0')}:${minutes}`;
+            document.getElementById('currentTime').textContent = `${String(hours % 12 || 12).padStart(2, '0')}:${minutes}`;
             document.getElementById('ampm').textContent = hours >= 12 ? 'PM' : 'AM';
             const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
             const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
@@ -537,10 +527,11 @@
         setInterval(updateClock, 1000); updateClock(); renderCalendar();
 
         function openModal(viewId) {
+            const container = document.getElementById('modalContainer');
             const contentDiv = document.getElementById('modalContent');
-            document.getElementById('modalContainer').style.display = 'block';
-            document.body.style.overflow = 'hidden';
             contentDiv.classList.remove('opacity-100'); contentDiv.classList.add('opacity-0');
+            container.style.display = 'block';
+            document.body.style.overflow = 'hidden';
 
             setTimeout(() => {
                 let html = '';
@@ -548,7 +539,7 @@
                     html = `
                         <div class="max-w-4xl mx-auto">
                             <h1 class="text-7xl font-black mb-4 uppercase text-gray-900 leading-none">LEE BORANG</h1>
-                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Web Publisher</p>
+                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Publisher</p>
                             
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                                 <div class="modal-info-card">
@@ -586,9 +577,30 @@
                             </div>
                         </div>`;
                 } else if (viewId === 'printList') {
-                    html = `<h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">Editorial Projects</h1><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="project-item" onclick="openProject('print_catalog')"><span class="text-pink-500 font-bold text-xs uppercase">2024</span><h3 class="text-2xl font-black text-gray-800 mt-2">Catalog Archive</h3><p class="text-gray-500 text-sm mt-2">카달로그 및 인쇄물 아카이브</p></div></div>`;
-                } else if (viewId === 'uiuxList') {
-                    html = `<h1 class="text-5xl font-black mb-12 uppercase">UIUX Projects</h1><div class="project-item" onclick="openProject('uiux1')"><span class="text-pink-500 font-bold text-xs uppercase">2025</span><h3 class="text-2xl font-black text-gray-800 mt-2">Fintech Mobile App</h3></div>`;
+                    // Editorial 위젯 클릭 시 목록 표시 (Catalog와 Poster가 함께 나옴)
+                    const filtered = Object.entries(projectData).filter(([k, v]) => v.category === 'Editorial');
+                    html = `<h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">Editorial Projects</h1>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                ${filtered.map(([id, p]) => `
+                                    <div class="project-item" onclick="openProject('${id}')">
+                                        <span class="text-pink-500 font-bold text-xs uppercase tracking-widest">${p.year}</span>
+                                        <h3 class="text-2xl font-black text-gray-800 mt-2">${p.title}</h3>
+                                        <p class="text-gray-500 text-sm mt-2">${p.desc}</p>
+                                    </div>
+                                `).join('')}
+                            </div>`;
+                } else if (viewId === 'uiuxList' || viewId === 'webContentList') {
+                    const category = viewId === 'uiuxList' ? 'UIUX' : 'Web Content';
+                    const filtered = Object.entries(projectData).filter(([k, v]) => v.category === category);
+                    html = `<h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">${category} Projects</h1>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                ${filtered.map(([id, p]) => `
+                                    <div class="project-item" onclick="openProject('${id}')">
+                                        <span class="text-pink-500 font-bold text-xs uppercase">${p.year}</span>
+                                        <h3 class="text-2xl font-black text-gray-800 mt-2">${p.title}</h3>
+                                    </div>
+                                `).join('')}
+                            </div>`;
                 }
                 contentDiv.innerHTML = html; contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
             }, 300);
@@ -597,15 +609,19 @@
         function openProject(id) {
             const project = projectData[id];
             const contentDiv = document.getElementById('modalContent');
-            contentDiv.classList.remove('opacity-100'); contentDiv.classList.add('opacity-0');
+            contentDiv.classList.replace('opacity-100', 'opacity-0');
             setTimeout(() => {
-                let innerHtml = `<div class="max-w-5xl mx-auto"><div class="mb-12 pb-8 border-b border-gray-100"><p class="text-pink-500 font-black text-xs uppercase mb-4">${project.category} — ${project.year}</p><h1 class="text-7xl font-black tracking-tighter mb-4">${project.title}</h1><p class="text-2xl text-gray-600 font-bold">${project.desc}</p></div>`;
+                let innerHtml = `<div class="max-w-5xl mx-auto">
+                    <div class="mb-12 pb-8 border-b border-gray-100">
+                        <p class="text-pink-500 font-black text-xs uppercase mb-4">${project.category} — ${project.year}</p>
+                        <h1 class="text-7xl font-black tracking-tighter mb-4">${project.title}</h1>
+                        <p class="text-2xl text-gray-600 font-bold">${project.desc}</p>
+                    </div>`;
                 if (project.images) {
-                    // 2열 레이아웃 및 클릭 시 라이트박스 오픈 함수 연결
-                    innerHtml += `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                    innerHtml += `<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         ${project.images.map(img => `
                             <div class="gallery-item-wrapper" onclick="openLightbox('${img}')">
-                                <img src="${img}" class="editorial-gallery-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1000?text=Check+Images+Folder'">
+                                <img src="${img}" class="editorial-gallery-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1000?text=Image+Not+Found'">
                             </div>
                         `).join('')}
                     </div>`;
@@ -613,20 +629,17 @@
                     innerHtml += `<div class="w-full h-96 bg-pink-50 rounded-2xl flex items-center justify-center text-pink-200 font-black text-2xl uppercase">Coming Soon</div>`;
                 }
                 contentDiv.innerHTML = innerHtml + `</div>`;
-                contentDiv.classList.remove('opacity-0'); contentDiv.classList.add('opacity-100');
+                contentDiv.classList.replace('opacity-0', 'opacity-100');
             }, 300);
         }
 
-        // 라이트박스 열기
         function openLightbox(src) {
             const overlay = document.getElementById('lightboxOverlay');
             const img = document.getElementById('lightboxImg');
-            img.src = src;
-            overlay.style.display = 'flex';
+            img.src = src; overlay.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
-        // 라이트박스 닫기
         function closeLightbox() {
             document.getElementById('lightboxOverlay').style.display = 'none';
             if (document.getElementById('modalContainer').style.display !== 'block') {
