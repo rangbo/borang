@@ -58,7 +58,7 @@
             background: rgba(255, 255, 255, 0.95) !important;
         }
 
-        /* UIUX 카드 애니메이션 배경 (수정 금지) */
+        /* UIUX 카드 애니메이션 배경 */
         .work-card-mesh {
             position: absolute;
             inset: 0;
@@ -290,24 +290,24 @@
             background: rgba(0, 0, 0, 0.95);
             z-index: 200;
             flex-direction: column;
-            justify-content: flex-start; /* 긴 이미지를 위해 상단부터 정렬 */
+            justify-content: flex-start;
             align-items: center;
             padding: 40px 20px;
             cursor: zoom-out;
             animation: fadeIn 0.3s ease;
-            overflow-y: auto; /* 긴 이미지를 위해 스크롤 허용 */
+            overflow-y: auto;
         }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .lightbox-img {
-            max-width: 900px; /* 가독성을 위한 최대 너비 제한 */
+            max-width: 900px;
             width: 95%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 0 50px rgba(0,0,0,0.5);
             object-fit: contain;
-            margin: auto; /* 상하 스크롤 시 중앙 유지 */
+            margin: auto;
             animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -470,7 +470,7 @@
         </div>
     </div>
 
-    <!-- 라이트박스 (원본 상세보기) -->
+    <!-- 라이트박스 -->
     <div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox()">
         <span class="lightbox-close">✕</span>
         <img id="lightboxImg" class="lightbox-img" src="" alt="확대 상세 이미지">
@@ -521,6 +521,15 @@
                 desc: '모바일 환경에 최적화된 마케팅 팝업 및 이벤트 배너 디자인 아카이브입니다.',
                 images: [
                     getGithubImg('web1.png'), getGithubImg('web2.png')
+                ]
+            },
+            'web_marketing': {
+                category: 'Web Content',
+                year: '2025',
+                title: 'Web Marketing Content',
+                desc: '웹 프로모션 및 마케팅을 위한 대형 컨텐츠 디자인 아카이브입니다.',
+                images: [
+                    getGithubImg('web3.png')
                 ]
             }
         };
@@ -644,7 +653,9 @@
                         <p class="text-2xl text-gray-600 font-bold">${project.desc}</p>
                     </div>`;
                 if (project.images) {
-                    innerHtml += `<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    // 이미지가 1개일 경우와 여러 개일 경우를 고려한 그리드
+                    const gridCols = project.images.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2';
+                    innerHtml += `<div class="grid ${gridCols} gap-10">
                         ${project.images.map(img => `
                             <div class="gallery-item-wrapper" onclick="openLightbox('${img}')">
                                 <img src="${img}" class="editorial-gallery-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1000?text=Image+Not+Found'">
@@ -665,7 +676,7 @@
             img.src = src; 
             overlay.style.display = 'flex';
             document.body.style.overflow = 'hidden';
-            overlay.scrollTop = 0; // 항상 맨 위부터 보이도록 설정
+            overlay.scrollTop = 0; 
         }
 
         function closeLightbox() {
