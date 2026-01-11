@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Interactive Portfolio</title>
+    <title>My Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
@@ -58,13 +58,13 @@
             background: rgba(255, 255, 255, 0.95) !important;
         }
 
-        /* WEB CONTENT 전용 배경 그라데이션 (중앙 원형 복구) */
+        /* WEB CONTENT 전용 배경 그라데이션 */
         .web-content-widget {
             background: radial-gradient(circle at center, #ffffff 0%, #d8b4fe 45%, #5eead4 100%) !important;
             border: 1px solid rgba(255, 255, 255, 0.3) !important;
         }
 
-        /* UIUX 카드 애니메이션 배경 (수정 금지) */
+        /* UIUX 카드 애니메이션 배경 */
         .work-card-mesh {
             position: absolute;
             inset: 0;
@@ -471,7 +471,7 @@
                         </div>
                     </div>
 
-                    <!-- Web Content (그라데이션 배경 복구 & 라벨 수정) -->
+                    <!-- Web Content -->
                     <div class="widget h-full p-6 flex flex-col justify-end items-start web-content-widget" onclick="openModal('webContentList')">
                         <div class="editorial-content flex flex-col justify-end items-start text-left">
                             <span class="bg-white/90 backdrop-blur-sm text-pink-500 px-4 py-1 rounded-full text-[8px] font-black uppercase tracking-widest shadow-sm mb-3">Promotion</span>
@@ -479,8 +479,8 @@
                         </div>
                     </div>
 
-                    <!-- SITE HUB -->
-                    <div class="widget h-full p-6 flex flex-col justify-between site-hub-widget" onclick="openModal('siteList')">
+                    <!-- SITE HUB (Live Sites) -->
+                    <div class="widget h-full p-6 flex flex-col justify-between site-hub-widget bg-white" onclick="openModal('siteList')">
                         <div class="flex gap-2 justify-end">
                             <div class="site-link-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9h18" /></svg></div>
                             <div class="site-link-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg></div>
@@ -543,8 +543,10 @@
             'print_catalog': { category: 'Editorial', year: '2024', title: 'Catalog Archive', desc: '카달로그 및 리플렛 인쇄물 디자인 모음입니다.', images: [getGithubImg('catalog1.png'), getGithubImg('catalog2.png'), getGithubImg('catalog3.png'), getGithubImg('catalog4.png'), getGithubImg('catalog5.png'), getGithubImg('catalog6.png'), getGithubImg('catalog7.png')] },
             'print_poster': { category: 'Editorial', year: '2024', title: 'Poster Archive', desc: '다양한 주제의 그래픽 포스터 디자인 모음입니다.', images: [getGithubImg('poster1.png'), getGithubImg('poster2.png'), getGithubImg('poster3.png'), getGithubImg('poster4.png')] },
             'print_etc': { category: 'Editorial', year: '2024', title: 'Graphic Archive', desc: '현수막, 쿠폰, 전단지, 각종 안내판 등 디자인 모음입니다.', images: [getGithubImg('editorial1.png'), getGithubImg('editorial2.png'), getGithubImg('editorial3.png'), getGithubImg('editorial4.png'), getGithubImg('editorial5.png'), getGithubImg('editorial6.png'), getGithubImg('editorial7.png'), getGithubImg('editorial8.png')] },
-            'site1': { category: 'Website', year: 'LIVE', title: 'Official Service Site', desc: '직접 구축하고 운영 중인 공식 서비스 사이트입니다.', link: 'https://example.com/site1' },
-            'site2': { category: 'Website', year: 'LIVE', title: 'Renewal Project Site', desc: '대대적인 개편을 거친 기업 사이트 프로젝트입니다.', link: '#' },
+            'site_sunchang': { category: 'Website', year: 'LIVE', title: '순창통합예약시스템', desc: '순창군 내 공공 시설 및 프로그램을 한곳에서 편리하게 예약하고 결제할 수 있는 통합 대민 서비스 시스템입니다.', link: 'https://yeyak.sunchang.go.kr/' },
+            'site_uaram': { category: 'Website', year: 'LIVE', title: '아람솔루션 대표홈페이지', desc: '혁신적인 기술력과 미래 지향적 가치를 담아낸 (주)아람솔루션의 공식 대표 웹사이트입니다.', link: 'https://www.uaram.co.kr/' },
+            'site_sanrio': { category: 'Website', year: 'CLONE', title: '산리오코리아 (클론코딩)', desc: '산리오코리아 공식 사이트의 감성을 재현한 퍼블리싱 프로젝트입니다.', link: 'https://rangbo.github.io/SanrioKr/' },
+            'site_cgv': { category: 'Website', year: 'CLONE', title: 'CGV 웹 서비스 (클론코딩)', desc: 'CGV의 핵심 서비스 인터페이스를 구현한 클론 코딩 프로젝트입니다.', link: 'https://rangbo.github.io/cgvWeb/' },
             'web_banner': { category: 'Web Content', year: '2024', title: 'Mobile Banner & Popup', desc: '모바일 마케팅 팝업 및 이벤트 배너 디자인입니다.', images: [getGithubImg('web1.png'), getGithubImg('web2.png')] },
             'web_marketing': { category: 'Web Content', year: '2025', title: 'Web Marketing Content', desc: '웹 프로모션을 위한 대형 컨텐츠 디자인입니다.', images: [getGithubImg('web3.png')] }
         };
@@ -632,7 +634,7 @@
                     html = `<h1 class="text-5xl font-black mb-12 uppercase tracking-tighter">${category} Projects</h1>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 ${filtered.map(([id, p]) => `
-                                    <div class="project-item" onclick="openProject('${id}')">
+                                    <div class="project-item" onclick="${category === 'Website' ? `window.open('${p.link}', '_blank')` : `openProject('${id}')`}">
                                         <div class="flex justify-between items-start">
                                             <div>
                                                 <span class="text-pink-500 font-bold text-xs uppercase tracking-widest">${p.year}</span>
