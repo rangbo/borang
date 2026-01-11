@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Interactive Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
@@ -148,6 +148,7 @@
             color: white;
         }
 
+        /* 하단 독바 스타일 */
         .dock-container {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(25px);
@@ -171,7 +172,6 @@
         .icon-phone { background: linear-gradient(135deg, #71ED7F 0%, #29B34A 100%); }
         .icon-mail { background: linear-gradient(135deg, #5ACFFF 0%, #007AFF 100%); }
         .icon-kakao { background: linear-gradient(135deg, #FFEF4F 0%, #FBB000 100%); }
-        .icon-gallery { background: linear-gradient(135deg, #FFFFFF 0%, #EBEBEB 100%); border: 1px solid rgba(0,0,0,0.05); }
 
         .modal {
             display: none;
@@ -261,7 +261,7 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
-        /* 갤러리 확대 및 라이트박스 관련 */
+        /* 갤러리 확대 및 라이트박스 */
         .gallery-item-wrapper {
             overflow: hidden;
             border-radius: 1.25rem;
@@ -496,18 +496,12 @@
             </div>
         </div>
 
-        <!-- 하단 Dock -->
+        <!-- 하단 Dock (아이콘 링크 수정 및 우측 아이콘 삭제) -->
         <div class="mt-12 flex justify-center">
             <div class="dock-container">
-                <div class="dock-icon icon-phone" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.97,14.94C18.7,14.51 17.3,14.51 16.03,14.94L13.89,17.08C10.66,15.44 8.01,12.79 6.37,9.56L8.51,7.42C8.94,6.15 8.94,4.75 8.51,3.48L7.87,1.54C7.5,0.42 6.44,-0.25 5.27,0.07L1.87,1.01C0.79,1.31 0,2.29 0,3.41C0,14.78 9.22,24 20.59,24C21.71,24 22.69,23.21 22.69,22.13L23.93,18.73C24.25,17.56 23.58,16.5 22.46,16.13L20.52,15.49L19.97,14.94Z" /></svg></div>
-                <div class="dock-icon icon-mail" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20,4H4C1.79,4 0,5.79 0,8V16C0,18.21 1.79,20 4,20H20C22.21,20 24,18.21 24,16V8C24,5.79 22.21,4 20,4M20,8.6L12,13.6L4,8.6V8L12,13L20,8V8.6Z" /></svg></div>
-                <div class="dock-icon icon-kakao" onclick="openModal('contact')"><svg width="28" height="28" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12,2C5.37,2 0,6.03 0,11C0,14.18 2.21,16.94 5.5,18.52C5.3,19.26 4.5,22.19 4.4,22.56C4.3,23 4.6,23 4.8,22.86C5,22.77 7.2,21.32 9.8,19.64C10.5,19.87 11.2,20 12,20C18.63,20 24,15.97 24,11C24,6.03 18.63,2,12,2Z" /></svg></div>
-                <div class="dock-icon icon-gallery" onclick="openModal('gallery')" title="갤러리">
-                    <svg width="32" height="32" viewBox="0 0 100 100">
-                        <defs><linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" x2="100%"><stop offset="0%" style="stop-color:#FF80AB;stop-opacity:1" /><stop offset="100%" style="stop-color:#FF4081;stop-opacity:1" /></linearGradient></defs>
-                        <circle cx="50" cy="50" r="15" fill="url(#flowerGrad)" /><circle cx="50" cy="25" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="50" cy="75" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="25" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" /><circle cx="75" cy="50" r="12" fill="url(#flowerGrad)" opacity="0.8" />
-                    </svg>
-                </div>
+                <div class="dock-icon icon-phone" onclick="window.location.href='tel:01055446013'"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.97,14.94C18.7,14.51 17.3,14.51 16.03,14.94L13.89,17.08C10.66,15.44 8.01,12.79 6.37,9.56L8.51,7.42C8.94,6.15 8.94,4.75 8.51,3.48L7.87,1.54C7.5,0.42 6.44,-0.25 5.27,0.07L1.87,1.01C0.79,1.31 0,2.29 0,3.41C0,14.78 9.22,24 20.59,24C21.71,24 22.69,23.21 22.69,22.13L23.93,18.73C24.25,17.56 23.58,16.5 22.46,16.13L20.52,15.49L19.97,14.94Z" /></svg></div>
+                <div class="dock-icon icon-mail" onclick="window.location.href='mailto:qhfkd645@naver.com'"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20,4H4C1.79,4 0,5.79 0,8V16C0,18.21 1.79,20 4,20H20C22.21,20 24,18.21 24,16V8C24,5.79 22.21,4 20,4M20,8.6L12,13.6L4,8.6V8L12,13L20,8V8.6Z" /></svg></div>
+                <div class="dock-icon icon-kakao" onclick="window.location.href='https://open.kakao.com/'"><svg width="28" height="28" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12,2C5.37,2 0,6.03 0,11C0,14.18 2.21,16.94 5.5,18.52C5.3,19.26 4.5,22.19 4.4,22.56C4.3,23 4.6,23 4.8,22.86C5,22.77 7.2,21.32 9.8,19.64C10.5,19.87 11.2,20 12,20C18.63,20 24,15.97 24,11C24,6.03 18.63,2,12,2Z" /></svg></div>
             </div>
         </div>
     </div>
@@ -543,7 +537,7 @@
             'print_catalog': { category: 'Editorial', year: '2024', title: 'Catalog Archive', desc: '카달로그 및 리플렛 인쇄물 디자인 모음입니다.', images: [getGithubImg('catalog1.png'), getGithubImg('catalog2.png'), getGithubImg('catalog3.png'), getGithubImg('catalog4.png'), getGithubImg('catalog5.png'), getGithubImg('catalog6.png'), getGithubImg('catalog7.png')] },
             'print_poster': { category: 'Editorial', year: '2024', title: 'Poster Archive', desc: '다양한 주제의 그래픽 포스터 디자인 모음입니다.', images: [getGithubImg('poster1.png'), getGithubImg('poster2.png'), getGithubImg('poster3.png'), getGithubImg('poster4.png')] },
             'print_etc': { category: 'Editorial', year: '2024', title: 'Graphic Archive', desc: '현수막, 쿠폰, 전단지, 각종 안내판 등 디자인 모음입니다.', images: [getGithubImg('editorial1.png'), getGithubImg('editorial2.png'), getGithubImg('editorial3.png'), getGithubImg('editorial4.png'), getGithubImg('editorial5.png'), getGithubImg('editorial6.png'), getGithubImg('editorial7.png'), getGithubImg('editorial8.png')] },
-            'site_sunchang': { category: 'Website', year: 'LIVE', title: '순창통합예약시스템', desc: '순창군 내 공공 시설 및 프로그램을 한곳에서 편리하게 예약하고 결제할 수 있는 통합 대민 서비스 시스템입니다.', link: 'https://yeyak.sunchang.go.kr/' },
+            'site_sunchang': { category: 'Website', year: 'LIVE', title: '순창통합예약시스템', desc: '순창군 내 공공 시설 및 프로그램을 한곳에서 편리하게 예약하고 결제할 수 있는 통합 대민 서비스 시스템입니다.', link: 'https://www.sunchang.go.kr/yeyak/' },
             'site_uaram': { category: 'Website', year: 'LIVE', title: '아람솔루션 대표홈페이지', desc: '혁신적인 기술력과 미래 지향적 가치를 담아낸 (주)아람솔루션의 공식 대표 웹사이트입니다.', link: 'https://www.uaram.co.kr/' },
             'site_sanrio': { category: 'Website', year: 'CLONE', title: '산리오코리아 (클론코딩)', desc: '산리오코리아 공식 사이트의 감성을 재현한 퍼블리싱 프로젝트입니다.', link: 'https://rangbo.github.io/SanrioKr/' },
             'site_cgv': { category: 'Website', year: 'CLONE', title: 'CGV 웹 서비스 (클론코딩)', desc: 'CGV의 핵심 서비스 인터페이스를 구현한 클론 코딩 프로젝트입니다.', link: 'https://rangbo.github.io/cgvWeb/' },
