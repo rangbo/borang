@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Interactive Portfolio</title>
+    <title>My Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
@@ -368,7 +368,7 @@
             <div class="col-span-12 lg:col-span-4 flex flex-col">
                 <div class="widget p-8 flex flex-col h-full" onclick="openModal('profile')">
                     <div class="flex flex-col w-full">
-                        <div class="mb-10">
+                        <div class="mb-6">
                             <h2 class="text-4xl font-black text-pink-500 uppercase tracking-tighter leading-none mb-2">LEE BORANG</h2>
                             <p class="text-gray-400 font-bold text-xs uppercase tracking-[0.2em]">UIUX Designer / Web Publisher</p>
                         </div>
@@ -443,7 +443,7 @@
                 </div>
 
                 <!-- DESIGNING EXPERIENCE (UIUX) -->
-                <div class="col-span-2 widget overflow-hidden relative group h-64" onclick="openModal('uiuxList')">
+                <div class="col-span-2 widget overflow-hidden relative group h-72" onclick="openModal('uiuxList')">
                     <div class="work-card-mesh"></div>
                     <div class="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors duration-500"></div>
                     <div class="absolute bottom-10 left-10 text-left z-10">
@@ -497,7 +497,7 @@
         </div>
 
         <!-- 하단 Dock (아이콘 링크 수정 및 우측 아이콘 삭제) -->
-        <div class="mt-12 flex justify-center">
+        <div class="mt-6 flex justify-center">
             <div class="dock-container">
                 <div class="dock-icon icon-phone" onclick="window.location.href='tel:01055446013'"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M19.97,14.94C18.7,14.51 17.3,14.51 16.03,14.94L13.89,17.08C10.66,15.44 8.01,12.79 6.37,9.56L8.51,7.42C8.94,6.15 8.94,4.75 8.51,3.48L7.87,1.54C7.5,0.42 6.44,-0.25 5.27,0.07L1.87,1.01C0.79,1.31 0,2.29 0,3.41C0,14.78 9.22,24 20.59,24C21.71,24 22.69,23.21 22.69,22.13L23.93,18.73C24.25,17.56 23.58,16.5 22.46,16.13L20.52,15.49L19.97,14.94Z" /></svg></div>
                 <div class="dock-icon icon-mail" onclick="window.location.href='mailto:qhfkd645@naver.com'"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M20,4H4C1.79,4 0,5.79 0,8V16C0,18.21 1.79,20 4,20H20C22.21,20 24,18.21 24,16V8C24,5.79 22.21,4 20,4M20,8.6L12,13.6L4,8.6V8L12,13L20,8V8.6Z" /></svg></div>
@@ -525,24 +525,24 @@
         const getGithubImg = (fileName) => `${githubPagesBase}${encodeURIComponent(fileName)}`;
 
         const projectData = {
-            'uiux1': { category: 'UIUX', year: '2024', title: 'Admin Dashboard Redesign', desc: '통합 관리 시스템의 가시성을 극대화한 대시보드 개편 작업입니다.', images: [getGithubImg('ui1.png')] },
-            'uiux2': { category: 'UIUX', year: '2024', title: 'Sports Festival Portal', desc: '전북특별자치도민체육대회의 생동감을 담은 반응형 웹사이트 구축.', images: [getGithubImg('ui2.png')] },
-            'uiux3': { category: 'UIUX', year: '2024', title: 'Delivery Platform Renewal', desc: '배달모아 메인 서비스 및 신규 커뮤니티 기능 기획과 반응형 관리자 대시보드 구축.', images: [getGithubImg('ui3.png')] },
-            'uiux4': { category: 'UIUX', year: '2024', title: 'Barrier-Free Kiosk UI', desc: '고대비/저시점 모드를 포함하여 정보 접근성을 극대화한 모두를 위한 키오스크 디자인.', images: [getGithubImg('ui4.png')] },
-            'uiux5': { category: 'UIUX', year: '2024', title: 'Business Support App', desc: '실무자의 워크플로우를 최적화하여 업무 효율을 높인 지원 애플리케이션.', images: [getGithubImg('ui5.png')] },
-            'uiux6': { category: 'UIUX', year: '2024', title: 'IoT Device Management', desc: '디바이스 연동을 통해 실시간 기기 상태를 모니터링하고 제어하는 지능형 상태 관리 앱.', images: [getGithubImg('ui6.png')] },
-            'uiux7': { category: 'UIUX', year: '2024', title: 'Seocheon-gun Portal', desc: '지역민의 정보 접근성과 편의성을 강화한 서천군청 누리집 개편 시안.', images: [getGithubImg('ui7.png')] },
-            'uiux8': { category: 'UIUX', year: '2024', title: 'Sunchang-gun Portal', desc: '군민과의 소통을 최우선으로 고려한 순창군청 공식 누리집 리뉴얼 시안.', images: [getGithubImg('ui8.png')] },
-            'uiux9': { category: 'UIUX', year: '2024', title: 'Gunsan Education Portal', desc: '연령대별 사용자 맞춤 캐릭터와 일러스트를 활용한 친근한 교육 플랫폼 디자인.', images: [getGithubImg('ui9.png')] },
-            'print_catalog': { category: 'Editorial', year: '2024', title: 'Catalog Archive', desc: '카달로그 및 리플렛 인쇄물 디자인 모음입니다.', images: [getGithubImg('catalog1.png'), getGithubImg('catalog2.png'), getGithubImg('catalog3.png'), getGithubImg('catalog4.png'), getGithubImg('catalog5.png'), getGithubImg('catalog6.png'), getGithubImg('catalog7.png')] },
-            'print_poster': { category: 'Editorial', year: '2024', title: 'Poster Archive', desc: '다양한 주제의 그래픽 포스터 디자인 모음입니다.', images: [getGithubImg('poster1.png'), getGithubImg('poster2.png'), getGithubImg('poster3.png'), getGithubImg('poster4.png')] },
-            'print_etc': { category: 'Editorial', year: '2024', title: 'Graphic Archive', desc: '현수막, 쿠폰, 전단지, 각종 안내판 등 디자인 모음입니다.', images: [getGithubImg('editorial1.png'), getGithubImg('editorial2.png'), getGithubImg('editorial3.png'), getGithubImg('editorial4.png'), getGithubImg('editorial5.png'), getGithubImg('editorial6.png'), getGithubImg('editorial7.png'), getGithubImg('editorial8.png')] },
-            'site_sunchang': { category: 'Website', year: 'LIVE', title: '순창통합예약시스템', desc: '순창군 내 공공 시설 및 프로그램을 한곳에서 편리하게 예약하고 결제할 수 있는 통합 대민 서비스 시스템입니다.', link: 'https://www.sunchang.go.kr/yeyak/' },
-            'site_uaram': { category: 'Website', year: 'LIVE', title: '아람솔루션 대표홈페이지', desc: '혁신적인 기술력과 미래 지향적 가치를 담아낸 (주)아람솔루션의 공식 대표 웹사이트입니다.', link: 'https://www.uaram.co.kr/' },
-            'site_sanrio': { category: 'Website', year: 'CLONE', title: '산리오코리아 (클론코딩)', desc: '산리오코리아 공식 사이트의 감성을 재현한 퍼블리싱 프로젝트입니다.', link: 'https://rangbo.github.io/SanrioKr/' },
-            'site_cgv': { category: 'Website', year: 'CLONE', title: 'CGV 웹 서비스 (클론코딩)', desc: 'CGV의 핵심 서비스 인터페이스를 구현한 클론 코딩 프로젝트입니다.', link: 'https://rangbo.github.io/cgvWeb/' },
-            'web_banner': { category: 'Web Content', year: '2024', title: 'Mobile Banner & Popup', desc: '모바일 마케팅 팝업 및 이벤트 배너 디자인입니다.', images: [getGithubImg('web1.png'), getGithubImg('web2.png')] },
-            'web_marketing': { category: 'Web Content', year: '2025', title: 'Web Marketing Content', desc: '웹 프로모션을 위한 대형 컨텐츠 디자인입니다.', images: [getGithubImg('web3.png')] }
+            'uiux1': { category: 'UIUX', year: 'Web', title: 'Admin Dashboard Redesign', desc: '기존의 부트스트랩 기반의 관리자페이지에서 벗어나 신규 시스템을 구축하며 디자인과 퍼블리싱을 담당했습니다', images: [getGithubImg('ui1.png')] },
+            'uiux2': { category: 'UIUX', year: 'web', title: 'Sports Festival Portal', desc: '전북특별자치도민체육대회 웹사이트 디자인 및 퍼블리싱에 참여했습니다 20여개의 종목 아이콘을 직접 디자인 하였으며 반응형 웹사이트로 태블릿, 모바일에서도 보기 쉽게 구축했습니다', images: [getGithubImg('ui2.png')] },
+            'uiux3': { category: 'UIUX', year: 'app', title: 'Delivery Platform Renewal', desc: '[제천시 공공배달앱 배달모아]의 고도화 작업에 참여했습니다 메뉴의 가로스크롤 배치, 리스트 검색기능 추가 등 요구사항에 맞는 디자인으로 구성하였으며 소모임/헬스케어/선물하기 등 실생활과 밀접한 서비스의 기획,디자인에 참여했습니다', images: [getGithubImg('ui3.png')] },
+            'uiux4': { category: 'UIUX', year: 'kiosk', title: 'Barrier-Free Kiosk UI', desc: '베리어프리 인증을 받기 위한 키오스크 디자인 구축에 참여했습니다 저시력자/낮은자세사용자를 위한 고대비 화면과 저자세 화면이 각각 구성되어 있으며 인증을 위한 색상대비,폰트크기를 고려하여 디자인했습니다', images: [getGithubImg('ui4.png')] },
+            'uiux5': { category: 'UIUX', year: 'app', title: 'Business Support App', desc: '실무자의 워크플로우를 최적화하여 업무 효율을 높인 업무지원 애플리케이션 디자인 및 퍼블리싱을 담당했습니다', images: [getGithubImg('ui5.png')] },
+            'uiux6': { category: 'UIUX', year: 'app', title: 'IoT Device Management', desc: '디바이스 연동을 통해 실시간 기기 상태를 모니터링하고 제어하는 지능형 상태 관리 앱의 디자인 및 퍼블리싱을 담당했습니다', images: [getGithubImg('ui6.png')] },
+            'uiux7': { category: 'UIUX', year: 'web', title: 'Seocheon-gun Portal', desc: '지역민의 정보 접근성과 편의성을 강화한 서천군청 누리집 개편 시안을 디자인했습니다', images: [getGithubImg('ui7.png')] },
+            'uiux8': { category: 'UIUX', year: 'web', title: 'Sunchang-gun Portal', desc: '군민과의 소통을 최우선으로 고려한 순창군청 공식 누리집 리뉴얼 시안을 디자인했습니다', images: [getGithubImg('ui8.png')] },
+            'uiux9': { category: 'UIUX', year: 'web', title: 'Gunsan Education Portal', desc: '클라이언트 요청에 따라 사용자 연령대에 따른 귀여운 캐릭터와 일러스트를 활용한 친근한 교육 플랫폼 디자인에 참여했습니다', images: [getGithubImg('ui9.png')] },
+            'print_catalog': { category: 'Editorial', year: 'catalog', title: 'Catalog Archive', desc: '카달로그 및 리플렛 인쇄물 디자인 모음입니다', images: [getGithubImg('catalog1.png'), getGithubImg('catalog2.png'), getGithubImg('catalog3.png'), getGithubImg('catalog4.png'), getGithubImg('catalog5.png'), getGithubImg('catalog6.png'), getGithubImg('catalog7.png')] },
+            'print_poster': { category: 'Editorial', year: 'poster', title: 'Poster Archive', desc: '다양한 주제의 그래픽 포스터 디자인 모음입니다', images: [getGithubImg('poster1.png'), getGithubImg('poster2.png'), getGithubImg('poster3.png'), getGithubImg('poster4.png')] },
+            'print_etc': { category: 'Editorial', year: 'etc', title: 'Graphic Archive', desc: '현수막, 쿠폰, 전단지, 각종 안내판 등 디자인 모음입니다.', images: [getGithubImg('editorial1.png'), getGithubImg('editorial2.png'), getGithubImg('editorial3.png'), getGithubImg('editorial4.png'), getGithubImg('editorial5.png'), getGithubImg('editorial6.png'), getGithubImg('editorial7.png'), getGithubImg('editorial8.png')] },
+            'site_sunchang': { category: 'Website', year: 'LIVE', title: '순창통합예약시스템', desc: '순창군 내 공공 시설 및 프로그램을 한곳에서 편리하게 예약하고 결제할 수 있는 통합 대민 서비스 시스템입니다', link: 'https://yeyak.sunchang.go.kr/index.webMber' },
+            'site_uaram': { category: 'Website', year: 'LIVE', title: '아람솔루션 대표홈페이지', desc: '혁신적인 기술력과 미래 지향적 가치를 담아낸 (주)아람솔루션의 공식 대표 웹사이트입니다', link: 'https://www.uaram.co.kr/' },
+            'site_sanrio': { category: 'Website', year: 'CLONE', title: '산리오코리아 (클론코딩)', desc: '산리오코리아 공식 사이트의 감성을 재현한 퍼블리싱 프로젝트입니다', link: 'https://rangbo.github.io/SanrioKr/' },
+            'site_cgv': { category: 'Website', year: 'CLONE', title: 'CGV 웹 서비스 (클론코딩)', desc: 'CGV의 핵심 서비스 인터페이스를 구현한 클론 코딩 프로젝트입니다', link: 'https://rangbo.github.io/cgvWeb/' },
+            'web_banner': { category: 'Web Content', year: 'contents', title: 'Mobile Banner & Popup', desc: '모바일 마케팅 팝업 및 이벤트 배너 디자인입니다', images: [getGithubImg('web1.png'), getGithubImg('web2.png')] },
+            'web_marketing': { category: 'Web Content', year: 'contents', title: 'Web Marketing Content', desc: '웹 프로모션을 위한 대형 컨텐츠 디자인입니다', images: [getGithubImg('web3.png')] }
         };
 
         function updateClock() {
@@ -586,15 +586,15 @@
                 if (viewId === 'profile') {
                     html = `<div class="max-w-4xl mx-auto">
                             <h1 class="text-7xl font-black mb-4 uppercase text-gray-900 leading-none">LEE BORANG</h1>
-                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Publisher</p>
+                            <p class="text-2xl text-pink-500 font-bold uppercase mb-12">UIUX Designer / Web Publisher</p>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                                 <div class="modal-info-card">
                                     <h3 class="text-xs font-black text-pink-400 uppercase tracking-widest mb-6">Education</h3>
                                     <div class="space-y-4">
                                         <div class="info-list-item"><span class="info-list-date text-[10px] font-extrabold text-pink-400">2019.02</span><span class="text-gray-700 font-bold text-sm">원광대학교 졸업</span></div>
-                                        <div class="info-list-item"><span class="info-list-date text-[10px] font-extrabold text-pink-400">2020.06</span><span class="text-gray-700 font-bold text-sm">이젠컴퓨터학원 수료</span></div>
-                                        <div class="info-list-item"><span class="info-list-date text-[10px] font-extrabold text-pink-400">2022.12</span><span class="info-list-text text-sm">패스트캠퍼스 React 수료</span></div>
-                                        <div class="info-list-item"><span class="info-list-date text-[10px] font-extrabold text-pink-400">2023.07</span><span class="info-list-text text-sm">패스트캠퍼스 퍼블리싱 수료</span></div>
+                                        <div class="info-list-item"><span class="info-list-date text-[10px] font-extrabold text-pink-400">2020.06</span><span class="text-gray-700 font-bold text-sm">이젠컴퓨터학원 웹디자인기능사 과정 수료</span></div>
+                                        <div class="info-list-item"><span class="info-list-date text-[10px] font-extrabold text-pink-400">2022.12</span><span class="info-list-text text-sm">패스트캠퍼스 React&Redux 웹 프로그래밍 수료</span></div>
+                                        <div class="info-list-item"><span class="info-list-date text-[10px] font-extrabold text-pink-400">2023.07</span><span class="info-list-text text-sm">패스트캠퍼스 웹퍼블리싱 완전 정복 수료</span></div>
                                     </div>
                                 </div>
                                 <div class="modal-info-card">
@@ -616,8 +616,8 @@
                                 <h3 class="text-sm font-black text-pink-400 uppercase tracking-widest mb-8">Introduction</h3>
                                 <div class="space-y-6 text-gray-300 text-lg leading-relaxed font-medium">
                                     <p class="text-3xl font-black text-white leading-tight">"사용자의 경험을 디자인하고 개발자의 효율을 코딩합니다"</p>
-                                    <p>커리어의 시작부터 자사몰의 웹과 앱 디자인 개편을 주도하고, 신규 쇼핑몰 오픈부터 오픈마켓 입점 관리, 상세페이지 및 각종 이벤트 배너 제작까지 이커머스의 전 과정을 깊이 있게 경험했습니다. 이후 약 40여 개의 다양한 프로젝트를 거치며 UIUX 디자인부터 퍼블리싱, 브랜드 인쇄 매체까지 디자인의 영역을 확장해 왔습니다. 특히 30,000명 이상의 유저가 활동하는 대규모 서비스의 디자인 구축에 참여하며 데이터 기반의 사용자 경험을 설계하는 법을 익혔습니다.</p>
-                                    <p>공공배달앱 고도화 프로젝트를 통해 세탁 예약, 공동구매, 소모임, 헬스케어, 선물하기 등 일상의 밀접한 서비스들을 정교한 UI로 구현해냈습니다. 단순히 시각적인 화려함에 그치지 않고 사용자가 가장 편안하게 느끼는 UX와 개발자가 효율적으로 작업할 수 있는 구조적인 코드를 만드는 것을 저의 확고한 디자인 철학으로 삼고 있습니다.</p>
+                                    <p>자사몰 디자인 개편과 리뉴얼을 주도하며 WEB/APP 인터페이스의 기초를 다졌습니다. 신규 쇼핑몰 런칭과 오픈마켓 입점 프로세스를 경험하며 상세페이지, 이벤트 배너, 프로모션 디자인 등 이커머스 실무 전반에 걸친 역량을 쌓았습니다.</p>
+                                    <p>이후 50여 개의 다양한 프로젝트에 참여하며 웹/앱 UIUX 디자인, 퍼블리싱, 브랜드 인쇄물까지 디자인 스펙트럼을 넓혔습니다. 주로 공공기관, 지자체와 함께 일했으며 30,000명 이상의 유저가 활동하는 대규모 서비스의 디자인 구축에 참여한 경험이 있습니다. 공공배달앱 고도화 프로젝트에서는 세탁 예약, 공동구매, 헬스케어, 선물하기 등 실생활과 밀접한 서비스의 UI를 디자인하고 퍼블리싱한 경험이 있습니다. 사용자가 편안함을 느끼는 UX와 개발자가 신뢰할 수 있는 구조적인 코드를 만드는 것을 추구합니다.</p>
                                 </div>
                             </div>
                         </div>`;
@@ -653,8 +653,8 @@
                     <div class="mb-12 pb-8 border-b border-gray-100 flex justify-between items-end">
                         <div>
                             <p class="text-pink-500 font-black text-xs uppercase mb-4">${project.category} — ${project.year}</p>
-                            <h1 class="text-7xl font-black tracking-tighter mb-4 uppercase">${project.title}</h1>
-                            <p class="text-2xl text-gray-600 font-bold">${project.desc}</p>
+                            <h1 class="text-5xl font-black tracking-tighter mb-4 uppercase">${project.title}</h1>
+                            <p class="text-1xl text-gray-600 font-bold">${project.desc}</p>
                         </div>
                         ${project.link ? `<a href="${project.link}" target="_blank" class="bg-gray-900 text-white px-8 py-3 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-4">Visit Site</a>` : ''}
                     </div>`;
